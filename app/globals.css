@@ -1,26 +1,212 @@
-@import "tailwindcss";
+/* ===== SideNav - elevator style ===== */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.nav-toggle {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 70;
+
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+
+  background: rgba(242, 223, 214, 0.9);
+  border: 1px solid rgba(0,0,0,0.18);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.nav-toggle:hover {
+  background: rgba(246, 238, 233, 0.95);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.nav-x {
+  font-size: 28px;
+  line-height: 1;
+  color: rgba(0,0,0,0.6);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.nav-burger {
+  width: 22px;
+  height: 14px;
+  position: relative;
+}
+.nav-burger::before,
+.nav-burger::after,
+.nav-burger {
+  content: "";
+  display: block;
+  background: rgba(0,0,0,0.65);
+  height: 2px;
+  border-radius: 2px;
+}
+.nav-burger::before {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+}
+.nav-burger::after {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+}
+
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+}
+.nav-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* wrapper slides fully offscreen when closed (no leaking) */
+.nav-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: min(420px, 92vw);
+  z-index: 65;
+
+  transform: translateX(-120%);
+  pointer-events: none;
+  transition: transform 280ms ease;
+}
+.nav-wrap.is-open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* floating centered panel */
+.nav-panel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  padding-left: 16px;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  width: min(360px, 85vw);
+  background: rgba(231, 198, 196, 0.65); /* soft pink tint */
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(0,0,0,0.14);
+  border-radius: 18px;
+
+  box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+/* one row like your example: label box + number circle + braille square */
+.nav-row {
+  display: grid;
+  grid-template-columns: 1fr 44px 44px;
+  gap: 12px;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+/* label rectangle */
+.nav-label {
+  background: rgba(242, 223, 214, 0.85);
+  border: 1px solid rgba(0,0,0,0.22);
+  border-radius: 14px;
+  padding: 12px 14px;
+
+  color: rgba(0,0,0,0.68);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.65),
+    0 10px 20px rgba(0,0,0,0.10);
+
+  transition: transform 160ms ease, box-shadow 200ms ease;
+}
+
+/* number circle */
+.nav-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(242, 223, 214, 0.90);
+  border: 1px solid rgba(0,0,0,0.28);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.62);
+
+  color: rgba(0,0,0,0.65);
+  font-weight: 800;
+}
+
+/* braille square */
+.nav-braille {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(242, 223, 214, 0.90);
+  border: 1px solid rgba(0,0,0,0.22);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.60);
+}
+
+/* dots (2 columns x 3 rows) */
+.braille-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 6px);
+  grid-template-rows: repeat(3, 6px);
+  gap: 5px;
+}
+.braille-grid .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: rgba(0,0,0,0.35);
+}
+
+/* braille image variant */
+.braille-img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.75;
+}
+
+/* hover/press feel (fluid like buttons) */
+.nav-row:hover .nav-label {
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.75),
+    0 14px 26px rgba(0,0,0,0.13);
+  transform: translateY(-1px);
+}
+.nav-row:active .nav-label {
+  transform: translateY(0px) scale(0.99);
 }
