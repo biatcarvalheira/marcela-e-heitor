@@ -1,21 +1,18 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { t } from "@/content/i18n"; // if alias fails, change to "../content/i18n"
+import { t } from "@/content/i18n";
 
 type NavRow = {
   key: string;
   label: string;
   href: string;
   number: number;
-  // If you want to use images instead of dots:
-  brailleImgSrc?: string; // e.g. "/images/braille/programacao.png"
 };
 
 function BrailleDots() {
-  // 2x3 braille grid like your reference icon
   return (
-    <span className="nav-braille" aria-hidden="true">
+    <span className="nav-braille is-sketch" aria-hidden="true">
       <span className="braille-grid">
         <span className="dot" />
         <span className="dot" />
@@ -31,13 +28,10 @@ function BrailleDots() {
 export function SideNav() {
   const [open, setOpen] = useState(false);
 
-  // Force exact numbering 1..6 in the order you requested
   const rows: NavRow[] = useMemo(() => {
     return t.navItems.map((item, idx) => ({
       ...item,
       number: idx + 1,
-      // Optional: set per-item braille images here if you want later
-      // brailleImgSrc: `/images/braille/${item.key}.png`,
     }));
   }, []);
 
@@ -50,7 +44,7 @@ export function SideNav() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Lock scroll while open (feels nicer)
+  // Lock scroll while open
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -62,7 +56,7 @@ export function SideNav() {
 
   return (
     <>
-      {/* Toggle button (simple) */}
+      {/* Toggle */}
       <button
         type="button"
         aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -78,7 +72,7 @@ export function SideNav() {
         onClick={() => setOpen(false)}
       />
 
-      {/* Panel wrapper */}
+      {/* Panel */}
       <aside className={`nav-wrap ${open ? "is-open" : ""}`}>
         <div className="nav-panel">
           <ul className="nav-list">
@@ -89,26 +83,18 @@ export function SideNav() {
                   className="nav-row"
                   onClick={() => setOpen(false)}
                 >
-                  {/* Label rectangle */}
-                  <span className="nav-label">{row.label}</span>
-
-                  {/* Number circle */}
-                  <span className="nav-num" aria-hidden="true">
-                    {row.number}
+                  {/* Label */}
+                  <span className="nav-label is-sketch">
+                    <span className="nav-label-text">{row.label}</span>
                   </span>
 
-                  {/* Braille block (dots by default) */}
-                  {row.brailleImgSrc ? (
-                    <span className="nav-braille" aria-hidden="true">
-                      <img
-                        src={row.brailleImgSrc}
-                        alt=""
-                        className="braille-img"
-                      />
-                    </span>
-                  ) : (
-                    <BrailleDots />
-                  )}
+                  {/* Number */}
+                  <span className="nav-num is-sketch" aria-hidden="true">
+                    <span className="nav-num-text">{row.number}</span>
+                  </span>
+
+                  {/* Braille */}
+                  <BrailleDots />
                 </a>
               </li>
             ))}

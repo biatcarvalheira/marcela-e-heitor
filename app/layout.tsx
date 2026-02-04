@@ -1,4 +1,17 @@
 import "./globals.css";
+import { Shadows_Into_Light, Style_Script } from "next/font/google";
+
+const shadowsIntoLight = Shadows_Into_Light({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-sketch",
+});
+
+const styleScript = Style_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-title",
+});
 
 export const metadata = {
   title: "Marcela & Heitor",
@@ -11,8 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body>{children}</body>
+    <html
+      lang="pt-BR"
+      className={`${shadowsIntoLight.variable} ${styleScript.variable}`}
+    >
+      <body className={`${shadowsIntoLight.variable} ${styleScript.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

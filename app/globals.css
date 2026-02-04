@@ -1,4 +1,72 @@
-/* ===== SideNav - elevator style ===== */
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* THEME */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-questrial);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   SECTION BACKGROUNDS
+   ========================= */
+
+/* HOME */
+@utility bg-home-mobile {
+  background-image: url("/images/home-mobile.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@utility bg-home-desktop {
+  background-image: url("/images/home-desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* PROGRAMAÇÃO */
+@utility bg-programacao-mobile {
+  background-image: url("/images/programacao-mobile.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@utility bg-programacao-desktop {
+  background-image: url("/images/programacao-desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   SideNav - elevator style
+   ========================= */
 
 .nav-toggle {
   position: fixed;
@@ -11,8 +79,8 @@
   border-radius: 999px;
 
   background: rgba(242, 223, 214, 0.9);
-  border: 1px solid rgba(0,0,0,0.18);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 
   display: grid;
   place-items: center;
@@ -28,7 +96,7 @@
 .nav-x {
   font-size: 28px;
   line-height: 1;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .nav-burger {
@@ -41,7 +109,7 @@
 .nav-burger {
   content: "";
   display: block;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0, 0, 0, 0.65);
   height: 2px;
   border-radius: 2px;
 }
@@ -62,7 +130,7 @@
   position: fixed;
   inset: 0;
   z-index: 60;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   opacity: 0;
   pointer-events: none;
   transition: opacity 260ms ease;
@@ -108,10 +176,10 @@
   background: rgba(231, 198, 196, 0.65); /* soft pink tint */
   backdrop-filter: blur(8px);
 
-  border: 1px solid rgba(0,0,0,0.14);
+  border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 18px;
 
-  box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 
   padding: 18px;
   display: grid;
@@ -128,24 +196,32 @@
   text-decoration: none;
 }
 
-/* label rectangle */
+/* label rectangle (BASE) */
 .nav-label {
+  position: relative; /* ✅ important for the sketch ::before and for text layering */
+  display: flex;      /* ✅ keeps label text aligned */
+  align-items: center;
+
   background: rgba(242, 223, 214, 0.85);
-  border: 1px solid rgba(0,0,0,0.22);
+  border: 1px solid rgba(0, 0, 0, 0.22);
   border-radius: 14px;
   padding: 12px 14px;
 
-  color: rgba(0,0,0,0.68);
+  color: rgba(0, 0, 0, 0.68);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 12px;
 
-  box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.65),
-    0 10px 20px rgba(0,0,0,0.10);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.65),
+    0 10px 20px rgba(0, 0, 0, 0.1);
 
   transition: transform 160ms ease, box-shadow 200ms ease;
+}
+
+/* ensures inner span behaves */
+.nav-label-text {
+  display: block;
 }
 
 /* number circle */
@@ -157,11 +233,11 @@
   display: grid;
   place-items: center;
 
-  background: rgba(242, 223, 214, 0.90);
-  border: 1px solid rgba(0,0,0,0.28);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.62);
+  background: rgba(242, 223, 214, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.62);
 
-  color: rgba(0,0,0,0.65);
+  color: rgba(0, 0, 0, 0.65);
   font-weight: 800;
 }
 
@@ -174,9 +250,9 @@
   display: grid;
   place-items: center;
 
-  background: rgba(242, 223, 214, 0.90);
-  border: 1px solid rgba(0,0,0,0.22);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.60);
+  background: rgba(242, 223, 214, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
 }
 
 /* dots (2 columns x 3 rows) */
@@ -190,7 +266,7 @@
   width: 6px;
   height: 6px;
   border-radius: 2px;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 /* braille image variant */
@@ -200,13 +276,176 @@
   opacity: 0.75;
 }
 
-/* hover/press feel (fluid like buttons) */
+/* hover/press feel (BASE) */
 .nav-row:hover .nav-label {
-  box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.75),
-    0 14px 26px rgba(0,0,0,0.13);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.75),
+    0 14px 26px rgba(0, 0, 0, 0.13);
   transform: translateY(-1px);
 }
 .nav-row:active .nav-label {
   transform: translateY(0px) scale(0.99);
+}
+
+/* =========================
+   SideNav – Sketch SVG label (only when .is-sketch)
+   ========================= */
+
+.nav-label.is-sketch {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  min-height: 56px;
+}
+
+/* SVG background */
+.nav-label.is-sketch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("/images/ui/nav-label-sketch.svg") center / 100% 100% no-repeat;
+
+  pointer-events: none;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+}
+
+/* Text on top */
+.nav-label.is-sketch .nav-label-text {
+  position: relative;
+  padding: 14px 22px;
+
+  color: #3a2f2a;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  text-shadow: 0 0.4px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: a tiny hand-drawn tilt */
+.nav-row .nav-label.is-sketch {
+  transform: rotate(-0.3deg);
+}
+
+/* Keep your existing hover, but do not break sketch bg */
+.nav-row:hover .nav-label.is-sketch {
+  transform: translateY(-1px) rotate(-0.3deg);
+}
+
+/* =========================
+   Sketch SVG number circle (FORCE)
+   ========================= */
+
+.nav-num.is-sketch {
+  position: relative !important;
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  /* kill old circle styling */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  transform: rotate(-0.35deg);
+}
+
+.nav-num.is-sketch::before {
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/ui/nav-num-sketch.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+
+  pointer-events: none;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
+}
+
+.nav-num-text {
+  position: relative;
+  z-index: 1; /* make sure text stays above svg */
+  font-weight: 900;
+  color: #3a2f2a;
+  font-size: 14px;
+  line-height: 1;
+  text-shadow: 0 0.4px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* keep tilt on hover/press */
+.nav-row:hover .nav-num.is-sketch {
+  transform: translateY(-1px) rotate(-0.35deg);
+}
+.nav-row:active .nav-num.is-sketch {
+  transform: translateY(0) scale(0.96) rotate(-0.35deg);
+}
+
+/* =========================
+   Sketch SVG braille block
+   ========================= */
+
+.nav-braille.is-sketch {
+  position: relative !important;
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  transform: rotate(-0.35deg);
+}
+
+.nav-braille.is-sketch::before {
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/ui/nav-braille-sketch.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+
+  pointer-events: none;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
+}
+
+/* Dots are drawn inside the SVG now */
+.nav-braille.is-sketch .braille-grid {
+  display: none;
+}
+/* =========================
+   Force Shadows Into Light on SideNav
+   ========================= */
+
+.nav-label.is-sketch .nav-label-text,
+.nav-num.is-sketch .nav-num-text {
+  font-family: var(--font-sketch), "Shadows Into Light", cursive !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+
+  letter-spacing: 0.06em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --font-title: var(--font-title);
+}
+
+/* Make ALL headings use Style Script */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title), cursive;
+  color: #5a2423;
 }

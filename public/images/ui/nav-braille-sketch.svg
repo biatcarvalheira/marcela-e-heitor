@@ -1,0 +1,53 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  preserveAspectRatio="none"
+>
+  <!-- background fill -->
+  <path
+    d="M10 12 C8 6, 20 6, 32 8 C44 6, 56 8, 54 16 L56 48 C56 56, 44 58, 32 56 C20 58, 8 56, 10 48 Z"
+    fill="#f1ded6"
+  />
+
+  <!-- main stroke -->
+  <path
+    d="M10 12 C8 6, 20 6, 32 8 C44 6, 56 8, 54 16 L56 48 C56 56, 44 58, 32 56 C20 58, 8 56, 10 48 Z"
+    fill="none"
+    stroke="#3a2f2a"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.85"
+  />
+
+  <!-- wobble stroke -->
+  <path
+    d="M12 14 C10 10, 22 10, 32 12 C42 10, 52 12, 52 18 L52 46 C52 52, 42 54, 32 52 C22 54, 10 52, 12 46 Z"
+    fill="none"
+    stroke="#3a2f2a"
+    stroke-width="1.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.35"
+  />
+
+  <!-- BRAILLE DOTS -->
+  <g fill="#3a2f2a" opacity="0.55">
+    <circle cx="24" cy="20" r="3"/>
+    <circle cx="40" cy="20" r="3"/>
+    <circle cx="24" cy="32" r="3"/>
+    <circle cx="40" cy="32" r="3"/>
+    <circle cx="24" cy="44" r="3"/>
+    <circle cx="40" cy="44" r="3"/>
+  </g>
+
+  <!-- dot wobble -->
+  <g fill="none" stroke="#3a2f2a" stroke-width="0.8" opacity="0.25">
+    <circle cx="24.5" cy="20.5" r="3"/>
+    <circle cx="40.5" cy="20.2" r="3"/>
+    <circle cx="23.8" cy="32.4" r="3"/>
+    <circle cx="40.2" cy="32.1" r="3"/>
+    <circle cx="24.3" cy="44.2" r="3"/>
+    <circle cx="39.7" cy="44.4" r="3"/>
+  </g>
+</svg>
