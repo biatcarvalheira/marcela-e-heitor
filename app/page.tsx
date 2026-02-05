@@ -11,29 +11,25 @@ export default function Page() {
 
     <Section id="home">
   <div className="relative min-h-screen overflow-hidden">
-    {/* ===== Video background ===== */}
+    {/* ===== GIF background ===== */}
 
-    {/* Mobile video */}
-    <video
-      className="absolute inset-0 w-full h-full object-cover md:hidden"
-      src="/videos/home-mobile.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="auto"
-    />
+    {/* Mobile GIF */}
+    <div className="absolute inset-0 md:hidden">
+      <img
+        src="/images/home-mobile.gif"
+        alt=""
+        className="w-full h-full object-cover"
+      />
+    </div>
 
-    {/* Desktop video */}
-    <video
-      className="absolute inset-0 w-full h-full object-cover hidden md:block"
-      src="/videos/home-desktop.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="auto"
-    />
+    {/* Desktop GIF */}
+    <div className="absolute inset-0 hidden md:block">
+      <img
+        src="/images/home-desktop.gif"
+        alt=""
+        className="w-full h-full object-cover"
+      />
+    </div>
 
     {/* ===== Title ===== */}
     <div className="relative z-10 min-h-screen text-white text-center px-6">
