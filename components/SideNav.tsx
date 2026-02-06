@@ -29,11 +29,26 @@ export function SideNav() {
   const [open, setOpen] = useState(false);
 
   const rows: NavRow[] = useMemo(() => {
-    return t.navItems.map((item, idx) => ({
+  const baseItems = t.navItems.map((item, idx) => ({
+    ...item,
+    number: idx + 1, // temporary, we'll shift after
+  }));
+
+  const itemsWithInicio: NavRow[] = [
+    {
+      key: "inicio",
+      label: "Início",
+      href: "#home", // or "#hero"
+      number: 0,
+    },
+    ...baseItems.map((item) => ({
       ...item,
-      number: idx + 1,
-    }));
-  }, []);
+      number: item.number, // already shifted by +1 above
+    })),
+  ];
+
+  return itemsWithInicio;
+}, []);
 
   // Close on ESC
   useEffect(() => {
