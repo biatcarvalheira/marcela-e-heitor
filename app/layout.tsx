@@ -36,10 +36,30 @@ export default function RootLayout({
           relative
         `}
       >
-        {/* ===== Continuous side frame (global overlay) ===== */}
-        {/* Put it BEHIND the SideNav by using a lower z-index */}
+        {/* ===== TOP + BOTTOM bars (absolute: top of doc + bottom of doc) ===== */}
+        <div className="pointer-events-none absolute inset-0 z-[40]">
+          {/* TOP (mobile: cover; desktop: fill) */}
+          <div className="absolute top-0 left-0 right-0 h-[32px] md:h-[64px]">
+            <img
+              src="/images/frame-top.png"
+              alt=""
+              className="w-full h-full object-cover md:object-fill"
+            />
+          </div>
+
+          {/* BOTTOM (mobile: cover; desktop: fill) */}
+          <div className="absolute bottom-0 left-0 right-0 h-[32px] md:h-[64px]">
+            <img
+              src="/images/frame-bottom.png"
+              alt=""
+              className="w-full h-full object-cover md:object-fill"
+            />
+          </div>
+        </div>
+
+        {/* ===== SIDE frames (fixed so they NEVER disappear while scrolling) ===== */}
         <div className="pointer-events-none fixed inset-0 z-[40]">
-          {/* MOBILE */}
+          {/* MOBILE sides (fixed viewport overlay) */}
           <img
             src="/images/frame-side.png"
             alt=""
@@ -51,7 +71,7 @@ export default function RootLayout({
             className="absolute right-0 top-0 h-dvh w-[32px] object-fill scale-x-[-1] md:hidden"
           />
 
-          {/* DESKTOP (md+) */}
+          {/* DESKTOP sides (md+) */}
           <div
             className="absolute top-0 bottom-0 left-0 hidden md:block w-[64px] bg-repeat-y bg-left"
             style={{
