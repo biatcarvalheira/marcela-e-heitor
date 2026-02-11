@@ -102,6 +102,53 @@ export default function Page() {
     </div>
   </div>
 </Section>
+
+<Section
+  id="como-chegar"
+  overlayClassName=""
+>
+  <div className="min-h-screen w-full flex flex-col items-center text-center px-8">
+    {/* TITLE */}
+    <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+      {t.sections.comoChegar.title}
+    </h2>
+
+    {/* GIF ANIMATION – 2x BIGGER */}
+    <div className="mt-10 md:mt-12 w-full flex justify-center">
+      <img
+        src="/images/como-chegar-animation.gif"
+        alt=""
+        className="
+          w-[420px] sm:w-[520px] md:w-[720px] lg:w-[900px]
+          h-auto
+          pointer-events-none
+          select-none
+        "
+      />
+    </div>
+
+    {/* SMALL GAP */}
+    <div className="h-8 md:h-10" />
+
+    {/* CONTENT */}
+    <div className="w-full flex justify-center pb-14 md:pb-20">
+      <p
+        style={{ fontFamily: "var(--font-sketch)" }}
+        className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
+      >
+        <strong>Hotel Rosewood São Paulo</strong>
+        <br />
+        Alameda Rio Claro, nº 20, Bela Vista
+        <br />
+        São Paulo – SP
+        <br />
+        <br />
+        O hotel está localizado em uma das regiões mais centrais da cidade,
+        com fácil acesso por carro ou aplicativo de transporte.
+      </p>
+    </div>
+  </div>
+</Section>
     </main>
   );
 }

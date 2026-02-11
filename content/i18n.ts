@@ -7,8 +7,10 @@ export type BgAsset = {
 export type SectionKey =
   | "home"
   | "programacao"
+  | "comoChegar"
   | "rsvp"
   | "hospedagem"
+  | "cabeloMake"
   | "dicas"
   | "presentes";
 
@@ -57,6 +59,13 @@ export const t = {
       title: "Programação",
       content: ["Cerimônia: 15h", "Recepção: 16h30", "Traje: Social"],
     },
+
+    // ✅ NEW SECTION
+    comoChegar: {
+      id: "como-chegar",
+      title: "Como chegar",
+    },
+
     rsvp: {
       id: "rsvp",
       title: "RSVP",
@@ -68,6 +77,14 @@ export const t = {
       title: "Hospedagem",
       content: ["Sugestões de hotéis em breve."],
     },
+
+    // (Optional) add when you build the section
+    cabeloMake: {
+      id: "cabelo-make",
+      title: "Cabelo & Make",
+      content: ["Sugestões em breve."],
+    },
+
     dicas: {
       id: "dicas",
       title: "Dicas",
@@ -80,12 +97,13 @@ export const t = {
     },
   },
 
-navItems: [
-  { key: "programacao", label: "Programação", href: "#programacao" },
-  { key: "como-chegar", label: "Como Chegar", href: "#como-chegar" },
-  { key: "hospedagem", label: "Hospedagem", href: "#hospedagem" },
-  { key: "cabelo-make", label: "Cabelo & Make", href: "#cabelo-make" },
-  { key: "rsvp", label: "RSVP", href: "#rsvp" },
-  { key: "presentes", label: "Presentes", href: "#presentes" },
-],
+  // ✅ keys updated to match SectionKey, hrefs stay kebab-case
+  navItems: [
+    { key: "programacao", label: "Programação", href: "#programacao" },
+    { key: "comoChegar", label: "Como Chegar", href: "#como-chegar" },
+    { key: "hospedagem", label: "Hospedagem", href: "#hospedagem" },
+    { key: "cabeloMake", label: "Cabelo & Make", href: "#cabelo-make" },
+    { key: "rsvp", label: "RSVP", href: "#rsvp" },
+    { key: "presentes", label: "Presentes", href: "#presentes" },
+  ],
 };
