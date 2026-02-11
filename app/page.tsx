@@ -103,24 +103,39 @@ export default function Page() {
   </div>
 </Section>
 
-<Section
-  id="como-chegar"
-  overlayClassName=""
->
-  <div className="min-h-screen w-full flex flex-col items-center text-center px-8">
+<Section id="como-chegar" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
     {/* TITLE */}
     <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
       {t.sections.comoChegar.title}
     </h2>
 
-    {/* GIF ANIMATION – 2x BIGGER */}
-    <div className="mt-10 md:mt-12 w-full flex justify-center">
+    {/* ANIMATION AREA */}
+    <div className="mt-4 md:mt-10 w-full flex items-center justify-center">
+      {/* MOBILE VERSION (make it BIG) */}
+      <img
+  src="/images/como-chegar-animation-mobile.gif"
+  alt=""
+  className="
+    block md:hidden
+    w-[100vw]
+    h-auto
+    object-contain
+    pointer-events-none
+    select-none
+    scale-[1.1]
+  "
+/>
+
+      {/* DESKTOP VERSION (keep it controlled + not overlapping) */}
       <img
         src="/images/como-chegar-animation.gif"
         alt=""
         className="
-          w-[420px] sm:w-[520px] md:w-[720px] lg:w-[900px]
+          hidden md:block
+          w-[560px] lg:w-[680px] xl:w-[760px]
           h-auto
+          object-contain
           pointer-events-none
           select-none
         "
@@ -128,10 +143,10 @@ export default function Page() {
     </div>
 
     {/* SMALL GAP */}
-    <div className="h-8 md:h-10" />
+    <div className="h-2 md:h-6" />
 
-    {/* CONTENT */}
-    <div className="w-full flex justify-center pb-14 md:pb-20">
+    {/* TEXT (close to animation) */}
+    <div className="w-full flex justify-center pb-12 md:pb-20">
       <p
         style={{ fontFamily: "var(--font-sketch)" }}
         className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
@@ -143,8 +158,8 @@ export default function Page() {
         São Paulo – SP
         <br />
         <br />
-        O hotel está localizado em uma das regiões mais centrais da cidade,
-        com fácil acesso por carro ou aplicativo de transporte.
+        O hotel está localizado em uma das regiões mais centrais da cidade, com
+        fácil acesso por carro ou aplicativo de transporte.
       </p>
     </div>
   </div>
