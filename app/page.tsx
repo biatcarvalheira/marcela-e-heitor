@@ -229,6 +229,68 @@ export default function Page() {
     </div>
   </div>
 </Section>
+
+{/* Hospedagem 2 (no title, text before animation) */}
+<Section id="hospedagem-2" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
+    {/* TEXT (before animation) */}
+    <div className="w-full flex justify-center pt-16 md:pt-20">
+      <p
+        style={{ fontFamily: "var(--font-sketch)" }}
+        className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
+      >
+        Também indicamos outros hotéis na região:
+        <br />
+        <br />
+        <strong>Hotel Fasano Jardins</strong>
+        <br />
+        <strong>Hotel Emiliano São Paulo</strong>
+        <br />
+        <strong>Ibis Paulista</strong>
+        <br />
+        <strong>Mercure São Paulo Paulista</strong>
+      </p>
+    </div>
+
+    {/* SMALL GAP */}
+    <div className="h-2 md:h-6" />
+
+    {/* ANIMATION AREA */}
+    <div className="mt-4 md:mt-10 w-full flex items-center justify-center">
+      {/* MOBILE VERSION (make it BIG) */}
+      <img
+        src="/images/hospedagem-2-animation-mobile.gif"
+        alt=""
+        className="
+          block md:hidden
+          w-[100vw]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+          scale-[1.1]
+        "
+      />
+
+      {/* DESKTOP VERSION (keep it controlled + not overlapping) */}
+      <img
+        src="/images/hospedagem-2-animation.gif"
+        alt=""
+        className="
+          hidden md:block
+          w-[560px] lg:w-[680px] xl:w-[760px]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+        "
+      />
+    </div>
+
+    {/* BOTTOM PADDING */}
+    <div className="h-10 md:h-16" />
+  </div>
+</Section>
     </main>
   );
 }

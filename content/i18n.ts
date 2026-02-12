@@ -77,6 +77,11 @@ export const t = {
       title: "Hospedagem",
       content: ["Sugestões de hotéis em breve."],
     },
+      hospedagem2: {
+      id: "hospedagem",
+      title: "Hospedagem",
+      content: ["Sugestões de hotéis em breve."],
+    },
 
     // (Optional) add when you build the section
     cabeloMake: {
