@@ -9,6 +9,7 @@ export default function Page() {
       <IntroVideoOverlay />
       <SideNav />
 
+{/* Home - Hero */}
       <Section id="home">
         <div className="relative min-h-screen overflow-hidden">
           {/* ===== GIF background ===== */}
@@ -47,76 +48,78 @@ export default function Page() {
         </div>
       </Section>
 
-<Section
-  id="programacao"
-  bgMobileClass="bg-programacao-mobile bg-cover bg-center bg-no-repeat"
-  bgDesktopClass="bg-programacao-desktop bg-cover bg-center bg-no-repeat"
-  overlayClassName=""
->
-  <div className="min-h-screen w-full flex flex-col items-center text-center px-8">
-    {/* TITLE */}
-    <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
-      {t.sections.programacao.title}
-    </h2>
+{/* Programacao */}
+      <Section
+        id="programacao"
+        bgMobileClass="bg-programacao-mobile bg-cover bg-center bg-no-repeat"
+        bgDesktopClass="bg-programacao-desktop bg-cover bg-center bg-no-repeat"
+        overlayClassName=""
+      >
+        <div className="min-h-screen w-full flex flex-col items-center text-center px-8">
+          {/* TITLE */}
+          <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+            {t.sections.programacao.title}
+          </h2>
 
-    {/* GIF ANIMATION – BIGGER */}
-    <div className="mt-10 md:mt-12 w-full flex justify-center">
-      <img
-        src="/images/programacao-animation.gif"
-        alt=""
-        className="
+          {/* GIF ANIMATION – BIGGER */}
+          <div className="mt-10 md:mt-12 w-full flex justify-center">
+            <img
+              src="/images/programacao-animation.gif"
+              alt=""
+              className="
           w-[300px] sm:w-[380px] md:w-[480px] lg:w-[560px]
           h-auto
           pointer-events-none
           select-none
         "
-      />
-    </div>
+            />
+          </div>
 
-    {/* SMALL GAP – keeps text close to GIF */}
-    <div className="h-8 md:h-10" />
+          {/* SMALL GAP – keeps text close to GIF */}
+          <div className="h-8 md:h-10" />
 
-    {/* CONTENT – closer to GIF */}
-    <div className="w-full flex justify-center pb-14 md:pb-20">
-      <p
-        style={{ fontFamily: "var(--font-sketch)" }}
-        className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
-      >
-        A cerimônia religiosa será na <strong>Capela Santa Luzia</strong>, às{" "}
-        <strong>18h</strong>, seguida da recepção no{" "}
-        <strong>Hotel Rosewood</strong> (salão principal) às{" "}
-        <strong>19h30</strong>, em São Paulo.
-        <br />
-        <br />
-        <strong>Traje:</strong> social completo.{" "}
-        <a
-          href="/images/moodboard-programacao.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-4 hover:opacity-80 transition"
-        >
-          Clique aqui
-        </a>{" "}
-        para conferir nosso moodboard com inspirações.
-      </p>
-    </div>
-  </div>
-</Section>
+          {/* CONTENT – closer to GIF */}
+          <div className="w-full flex justify-center pb-14 md:pb-20">
+            <p
+              style={{ fontFamily: "var(--font-sketch)" }}
+              className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
+            >
+              A cerimônia religiosa será na <strong>Capela Santa Luzia</strong>,
+              às <strong>18h</strong>, seguida da recepção no{" "}
+              <strong>Hotel Rosewood</strong> (salão principal) às{" "}
+              <strong>19h30</strong>, em São Paulo.
+              <br />
+              <br />
+              <strong>Traje:</strong> social completo.{" "}
+              <a
+                href="/images/moodboard-programacao.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:opacity-80 transition"
+              >
+                Clique aqui
+              </a>{" "}
+              para conferir nosso moodboard com inspirações.
+            </p>
+          </div>
+        </div>
+      </Section>
 
-<Section id="como-chegar" overlayClassName="">
-  <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
-    {/* TITLE */}
-    <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
-      {t.sections.comoChegar.title}
-    </h2>
+{/* Como Chegar */}
+      <Section id="como-chegar" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
+          {/* TITLE */}
+          <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+            {t.sections.comoChegar.title}
+          </h2>
 
-    {/* ANIMATION AREA */}
-    <div className="mt-4 md:mt-10 w-full flex items-center justify-center">
-      {/* MOBILE VERSION (make it BIG) */}
-      <img
-  src="/images/como-chegar-animation-mobile.gif"
-  alt=""
-  className="
+          {/* ANIMATION AREA */}
+          <div className="mt-4 md:mt-10 w-full flex items-center justify-center">
+            {/* MOBILE VERSION (make it BIG) */}
+            <img
+              src="/images/como-chegar-animation-mobile.gif"
+              alt=""
+              className="
     block md:hidden
     w-[100vw]
     h-auto
@@ -125,11 +128,75 @@ export default function Page() {
     select-none
     scale-[1.1]
   "
-/>
+            />
 
-      {/* DESKTOP VERSION (keep it controlled + not overlapping) */}
+            {/* DESKTOP VERSION (keep it controlled + not overlapping) */}
+            <img
+              src="/images/como-chegar-animation.gif"
+              alt=""
+              className="
+          hidden md:block
+          w-[560px] lg:w-[680px] xl:w-[760px]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+        "
+            />
+          </div>
+
+          {/* SMALL GAP */}
+          <div className="h-2 md:h-6" />
+
+          {/* TEXT (close to animation) */}
+          <div className="w-full flex justify-center pb-12 md:pb-20">
+            <p
+              style={{ fontFamily: "var(--font-sketch)" }}
+              className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
+            >
+              <strong>Hotel Rosewood São Paulo</strong>
+              <br />
+              Alameda Rio Claro, nº 20, Bela Vista
+              <br />
+              São Paulo – SP
+              <br />
+              <br />O hotel está localizado em uma das regiões mais centrais da
+              cidade, com fácil acesso por carro ou aplicativo de transporte.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      {/* Hospedagem 1 */}
+<Section id="hospedagem-1" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
+    
+    {/* TITLE */}
+    <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+      {t.sections.hospedagem1.title}
+    </h2>
+
+    {/* ANIMATION AREA (optional – remove if not using animation here) */}
+    <div className="mt-4 md:mt-10 w-full flex items-center justify-center">
+      
+      {/* MOBILE VERSION */}
       <img
-        src="/images/como-chegar-animation.gif"
+        src="/images/hospedagem-animation-mobile.gif"
+        alt=""
+        className="
+          block md:hidden
+          w-[100vw]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+          scale-[1.1]
+        "
+      />
+
+      {/* DESKTOP VERSION */}
+      <img
+        src="/images/hospedagem-animation.gif"
         alt=""
         className="
           hidden md:block
@@ -145,21 +212,19 @@ export default function Page() {
     {/* SMALL GAP */}
     <div className="h-2 md:h-6" />
 
-    {/* TEXT (close to animation) */}
+    {/* TEXT */}
     <div className="w-full flex justify-center pb-12 md:pb-20">
       <p
         style={{ fontFamily: "var(--font-sketch)" }}
         className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
       >
-        <strong>Hotel Rosewood São Paulo</strong>
-        <br />
-        Alameda Rio Claro, nº 20, Bela Vista
-        <br />
-        São Paulo – SP
+        Para quem desejar se hospedar no local do casamento, o{" "}
+        <strong>Hotel Rosewood São Paulo</strong> oferece condições especiais
+        para os convidados.
         <br />
         <br />
-        O hotel está localizado em uma das regiões mais centrais da cidade, com
-        fácil acesso por carro ou aplicativo de transporte.
+        Recomendamos entrar em contato diretamente com o hotel para consultar
+        disponibilidade e valores.
       </p>
     </div>
   </div>

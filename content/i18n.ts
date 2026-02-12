@@ -72,7 +72,7 @@ export const t = {
       cta: "Clique aqui",
       href: "/rsvp",
     },
-    hospedagem: {
+    hospedagem1: {
       id: "hospedagem",
       title: "Hospedagem",
       content: ["Sugestões de hotéis em breve."],
@@ -101,7 +101,7 @@ export const t = {
   navItems: [
     { key: "programacao", label: "Programação", href: "#programacao" },
     { key: "comoChegar", label: "Como Chegar", href: "#como-chegar" },
-    { key: "hospedagem", label: "Hospedagem", href: "#hospedagem" },
+    { key: "hospedagem", label: "Hospedagem", href: "#hospedagem-1" },
     { key: "cabeloMake", label: "Cabelo & Make", href: "#cabelo-make" },
     { key: "rsvp", label: "RSVP", href: "#rsvp" },
     { key: "presentes", label: "Presentes", href: "#presentes" },
