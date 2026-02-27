@@ -312,12 +312,13 @@ export default function Page() {
   </div>
 </Section>
 
-<Section id="rsvp" overlayClassName="">
+{/* Cabelo & Make */}
+<Section id="cabelo-make" overlayClassName="">
   <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
     
     {/* TITLE */}
     <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
-      {t.sections.rsvp.title}
+      {t.sections.cabeloMake.title}
     </h2>
 
     {/* ANIMATION AREA */}
@@ -325,7 +326,141 @@ export default function Page() {
       
       {/* MOBILE VERSION */}
       <img
-        src="/images/rsvp-animation-mobile.gif"
+        src="/images/cabelo-animation-mobile.gif"
+        alt=""
+        className="
+          block md:hidden
+          w-[100vw]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+          scale-[1.1]
+        "
+      />
+
+      {/* DESKTOP VERSION (2x smaller) */}
+      <img
+        src="/images/cabelo-animation.gif"
+        alt=""
+        className="
+          hidden md:block
+          w-[280px] lg:w-[340px] xl:w-[380px]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+        "
+      />
+    </div>
+
+    {/* GAP */}
+    <div className="h-4 md:h-8" />
+
+    {/* CONTENT */}
+    <div
+      style={{ fontFamily: "var(--font-sketch)" }}
+      className="w-full max-w-xl text-[#5a2423] text-base md:text-lg leading-relaxed pb-16 md:pb-24"
+    >
+      <p className="mb-6">
+        Algumas sugestões de cabelo e maquiagem em São Paulo:
+      </p>
+
+      <ul className="space-y-4">
+        <li>
+          <a
+            href="https://www.instagram.com/1838estadosunidos/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline"
+          >
+            1838
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.instagram.com/studiolorena/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline"
+          >
+            Studio Lorena
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.instagram.com/rom.concept"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline"
+          >
+            Rom Concept
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.instagram.com/marcosproencacabeleireiros"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline"
+          >
+            Marcos Proença
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.instagram.com/oessehair/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline"
+          >
+            Oésse
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</Section>
+
+{/* Presentes */}
+<Section id="presentes" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
+    
+    {/* TITLE */}
+    <h2 className="pt-16 md:pt-20 text-5xl text-[#1c5134]">
+      {t.sections.presentes.title}
+    </h2>
+
+    {/* TEXT (before animation) */}
+    <div className="w-full flex justify-center mt-8">
+      <p
+        style={{ fontFamily: "var(--font-sketch)" }}
+        className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
+      >
+        Em breve compartilharemos nossa lista de presentes:
+        <br />
+        <br />
+        <strong>Mickey</strong> – Em Breve
+        <br />
+        <strong>Tool Box</strong> – Em Breve
+        <br />
+        <strong>Tania</strong> – Em Breve
+      </p>
+    </div>
+
+    {/* SMALL GAP */}
+    <div className="h-2 md:h-6" />
+
+    {/* ANIMATION AREA */}
+    <div className="mt-4 md:mt-10 w-full flex items-center justify-center">
+      
+      {/* MOBILE VERSION */}
+      <img
+        src="/images/presentes-animation-mobile.gif"
         alt=""
         className="
           block md:hidden
@@ -340,7 +475,7 @@ export default function Page() {
 
       {/* DESKTOP VERSION */}
       <img
-        src="/images/rsvp-animation.gif"
+        src="/images/presentes-animation.gif"
         alt=""
         className="
           hidden md:block
@@ -353,22 +488,8 @@ export default function Page() {
       />
     </div>
 
-    {/* SMALL GAP */}
-    <div className="h-2 md:h-6" />
-
-    {/* TEXT */}
-    <div className="w-full flex justify-center pb-12 md:pb-20">
-      <p
-        style={{ fontFamily: "var(--font-sketch)" }}
-        className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
-      >
-        Pedimos a gentileza de confirmar sua presença diretamente com nossa
-        assessoria, por WhatsApp.
-        <br />
-        <br />
-        Em breve, todos os contatos estarão disponíveis por aqui.
-      </p>
-    </div>
+    {/* BOTTOM PADDING */}
+    <div className="h-10 md:h-16" />
   </div>
 </Section>
     </main>

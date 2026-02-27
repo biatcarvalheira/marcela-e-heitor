@@ -65,13 +65,6 @@ export const t = {
       id: "como-chegar",
       title: "Como chegar",
     },
-
-    rsvp: {
-      id: "rsvp",
-      title: "RSVP",
-      cta: "Clique aqui",
-      href: "/rsvp",
-    },
     hospedagem1: {
       id: "hospedagem",
       title: "Hospedagem",
@@ -108,7 +101,6 @@ export const t = {
     { key: "comoChegar", label: "Como Chegar", href: "#como-chegar" },
     { key: "hospedagem", label: "Hospedagem", href: "#hospedagem-1" },
     { key: "cabeloMake", label: "Cabelo & Make", href: "#cabelo-make" },
-    { key: "rsvp", label: "RSVP", href: "#rsvp" },
     { key: "presentes", label: "Presentes", href: "#presentes" },
   ],
 };
