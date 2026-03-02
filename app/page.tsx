@@ -259,7 +259,7 @@ export default function Page() {
         style={{ fontFamily: "var(--font-sketch)" }}
         className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
       >
-        Também indicamos outros hotéis na região:
+        Também indicamos outros hotéis na região (distância em km a partir do Hotel Rosewood):
         <br />
         <br />
         <a
