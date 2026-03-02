@@ -262,13 +262,50 @@ export default function Page() {
         Também indicamos outros hotéis na região:
         <br />
         <br />
-        <strong>Hotel Fasano Jardins</strong>
+        <a
+          href="https://www.bluetree.com.br/hotel/blue-tree-premium-paulista"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Blue Tree Paulista - 1.6km - 4 estrelas
+        </a>
         <br />
-        <strong>Hotel Emiliano São Paulo</strong>
+        <a
+          href="https://cadoro.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Hotel Cadoro - 2.2 km - 4 estrelas
+        </a>
         <br />
-        <strong>Ibis Paulista</strong>
+        <a
+          href="https://www.fasano.com.br/hotel/hotel-fasano-sao-paulo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Hotel Fasano - 2.8 km - 5 estrelas
+        </a>
         <br />
-        <strong>Mercure São Paulo Paulista</strong>
+        <a
+          href="https://all.accor.com/hotel/9610/index.pt-br.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=bing+maps"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Ibis Budget Frei Caneca - 1.8 km - 2 estrelas
+        </a>
+        <br />
+        <a
+          href="https://www.intercityhoteis.com.br/hotel-sao-paulo/hotel-intercity-pamplona-paulista"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Hotel Intercity Pamplona - 240m - 3 estrelas
+        </a>
       </p>
     </div>
 
