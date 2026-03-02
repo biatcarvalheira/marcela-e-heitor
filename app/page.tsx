@@ -441,14 +441,35 @@ export default function Page() {
         style={{ fontFamily: "var(--font-sketch)" }}
         className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
       >
-        Em breve compartilharemos nossa lista de presentes:
+        Confira nossas listas de presentes nos links abaixo:
         <br />
         <br />
-        <strong>Mickey</strong> – Em Breve
+        <a
+          href="https://site.lejour.com.br/lista-de-presentes/marcela-e-heitor"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Fast Shop + Lejour
+        </a>
         <br />
-        <strong>Tool Box</strong> – Em Breve
+        <a
+          href="https://www.tbox.com.br/gift-list-details/view/marcelacavallari-heitorgoellner"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Tbox
+        </a>
         <br />
-        <strong>Tania</strong> – Em Breve
+        <a
+          href="https://www.mickey.com.br/lista-presente/a9a6653e48976138166de32772b1bf40"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Mickey
+        </a>
       </p>
     </div>
 
