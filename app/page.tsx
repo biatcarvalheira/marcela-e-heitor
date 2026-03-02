@@ -263,6 +263,15 @@ export default function Page() {
         <br />
         <br />
         <a
+          href="https://www.fasano.com.br/hotel/hotel-fasano-sao-paulo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Hotel Fasano - 2.8 km - 5 estrelas
+        </a>
+        <br />
+        <a
           href="https://www.bluetree.com.br/hotel/blue-tree-premium-paulista"
           target="_blank"
           rel="noopener noreferrer"
@@ -281,12 +290,12 @@ export default function Page() {
         </a>
         <br />
         <a
-          href="https://www.fasano.com.br/hotel/hotel-fasano-sao-paulo/"
+          href="https://www.intercityhoteis.com.br/hotel-sao-paulo/hotel-intercity-pamplona-paulista"
           target="_blank"
           rel="noopener noreferrer"
           className="font-semibold hover:underline"
         >
-          Hotel Fasano - 2.8 km - 5 estrelas
+          Hotel Intercity Pamplona - 240m - 3 estrelas
         </a>
         <br />
         <a
@@ -296,15 +305,6 @@ export default function Page() {
           className="font-semibold hover:underline"
         >
           Ibis Budget Frei Caneca - 1.8 km - 2 estrelas
-        </a>
-        <br />
-        <a
-          href="https://www.intercityhoteis.com.br/hotel-sao-paulo/hotel-intercity-pamplona-paulista"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold hover:underline"
-        >
-          Hotel Intercity Pamplona - 240m - 3 estrelas
         </a>
       </p>
     </div>
