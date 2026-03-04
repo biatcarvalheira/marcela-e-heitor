@@ -34,11 +34,12 @@ export default function RootLayout({
           ${shadowsIntoLight.variable} ${styleScript.variable}
           bg-[#debcbb]
           relative
+          overflow-x-hidden
         `}
       >
-        {/* ===== TOP + BOTTOM bars (absolute: top of doc + bottom of doc) ===== */}
-        <div className="pointer-events-none absolute inset-0 z-[40]">
-          {/* TOP (mobile: cover; desktop: fill) */}
+        {/* ===== FRAME OVERLAY (ALWAYS VISIBLE, EXCEPT DURING INTRO) ===== */}
+        <div className="site-frame pointer-events-none fixed inset-0 z-[80]">
+          {/* TOP */}
           <div className="absolute top-0 left-0 right-0 h-[32px] md:h-[64px]">
             <img
               src="/images/frame-top.png"
@@ -47,7 +48,7 @@ export default function RootLayout({
             />
           </div>
 
-          {/* BOTTOM (mobile: cover; desktop: fill) */}
+          {/* BOTTOM */}
           <div className="absolute bottom-0 left-0 right-0 h-[32px] md:h-[64px]">
             <img
               src="/images/frame-bottom.png"
@@ -55,11 +56,8 @@ export default function RootLayout({
               className="w-full h-full object-cover md:object-fill"
             />
           </div>
-        </div>
 
-        {/* ===== SIDE frames (fixed so they NEVER disappear while scrolling) ===== */}
-        <div className="pointer-events-none fixed inset-0 z-[40]">
-          {/* MOBILE sides (fixed viewport overlay) */}
+          {/* MOBILE SIDES */}
           <img
             src="/images/frame-side.png"
             alt=""
@@ -71,7 +69,7 @@ export default function RootLayout({
             className="absolute right-0 top-0 h-dvh w-[32px] object-fill scale-x-[-1] md:hidden"
           />
 
-          {/* DESKTOP sides (md+) */}
+          {/* DESKTOP SIDES (md+) */}
           <div
             className="absolute top-0 bottom-0 left-0 hidden md:block w-[64px] bg-repeat-y bg-left"
             style={{
@@ -90,7 +88,10 @@ export default function RootLayout({
           />
         </div>
 
-        {children}
+        {/* ===== CONTENT (SCROLLS UNDER FRAME) ===== */}
+        <div className="site-content relative z-[10] min-h-dvh pt-[32px] pb-[32px] px-[32px] md:pt-[64px] md:pb-[64px] md:px-[64px]">
+          {children}
+        </div>
       </body>
     </html>
   );

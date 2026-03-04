@@ -19,8 +19,23 @@ export function IntroVideoOverlay() {
   const src = desktop ? t.introVideo.desktop : t.introVideo.mobile;
   const poster = desktop ? t.introVideo.posterDesktop : t.introVideo.posterMobile;
 
+  // When overlay is visible, add a flag on <body> so layout can react
+  useEffect(() => {
+    document.body.classList.add("intro-active");
+    return () => {
+      document.body.classList.remove("intro-active");
+    };
+  }, []);
+
   const finish = () => {
     setFade(true);
+
+    // remove the frame-hide flag a bit BEFORE we fully unmount,
+    // so the frame can fade in while the overlay fades out
+    setTimeout(() => {
+      document.body.classList.remove("intro-active");
+    }, 250);
+
     setTimeout(() => setVisible(false), 700);
   };
 
@@ -34,8 +49,8 @@ export function IntroVideoOverlay() {
     } catch {}
 
     const p = el.play();
-    if (p && typeof p.catch === "function") {
-      p.catch(() => {
+    if (p && typeof (p as any).catch === "function") {
+      (p as Promise<void>).catch(() => {
         // Autoplay may be blocked; user tap will retry.
       });
     }
@@ -53,7 +68,6 @@ export function IntroVideoOverlay() {
         transition-opacity duration-700
       `}
       style={{
-        // extra safety: ensure it's always on top + covers everything
         width: "100vw",
         height: "100vh",
       }}
