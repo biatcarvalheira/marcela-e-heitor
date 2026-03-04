@@ -4,7 +4,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* THEME */
+/* ========================= THEME ========================= */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -30,15 +31,20 @@ body {
 }
 
 /* ========================= INTRO OVERLAY BEHAVIOR ========================= */
-/* Hide frame while intro animation is playing */
-
-body.intro-active .site-frame {
+/* Default: frame hidden to avoid pre-hydration flash */
+.site-frame {
   opacity: 0;
   visibility: hidden;
   transition: opacity 400ms ease;
 }
 
-/* Optional: remove content padding during intro */
+/* When intro finishes, show the frame */
+body.frame-ready .site-frame {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* During intro, remove content padding (optional) */
 body.intro-active .site-content {
   padding: 0 !important;
 }
@@ -61,7 +67,6 @@ body.intro-active .site-content {
 }
 
 /* PROGRAMAÇÃO */
-
 @utility bg-programacao-mobile {
   background-image: url("/images/programacao-mobile.png");
   background-size: cover;
@@ -77,12 +82,14 @@ body.intro-active .site-content {
 }
 
 /* ========================= SideNav - elevator style ========================= */
+/* These z-index values matter only if you DON'T portal.
+   With the portal they’re still fine, and guarantee the nav sits above the frame. */
 
 .nav-toggle {
   position: fixed;
   top: 24px;
   left: 24px;
-  z-index: 70;
+  z-index: 300;
   width: 48px;
   height: 48px;
   border-radius: 999px;
@@ -138,7 +145,7 @@ body.intro-active .site-content {
 .nav-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 60;
+  z-index: 280;
   background: rgba(0, 0, 0, 0.35);
   opacity: 0;
   pointer-events: none;
@@ -150,15 +157,14 @@ body.intro-active .site-content {
   pointer-events: auto;
 }
 
-/* wrapper slides fully offscreen when closed */
-
+/* wrapper slides fully offscreen when closed (no leaking) */
 .nav-wrap {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: min(420px, 92vw);
-  z-index: 65;
+  z-index: 290;
   transform: translateX(-120%);
   pointer-events: none;
   transition: transform 280ms ease;
@@ -170,7 +176,6 @@ body.intro-active .site-content {
 }
 
 /* floating centered panel */
-
 .nav-panel {
   height: 100%;
   display: flex;
@@ -183,7 +188,7 @@ body.intro-active .site-content {
   margin: 0;
   padding: 0;
   width: min(360px, 85vw);
-  background: rgba(231, 198, 196, 0.65);
+  background: rgba(231, 198, 196, 0.65); /* soft pink tint */
   backdrop-filter: blur(8px);
   border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 18px;
@@ -193,8 +198,7 @@ body.intro-active .site-content {
   gap: 14px;
 }
 
-/* nav row layout */
-
+/* one row like your example: label box + number circle + braille square */
 .nav-row {
   display: grid;
   grid-template-columns: 1fr 44px 44px;
@@ -203,8 +207,7 @@ body.intro-active .site-content {
   text-decoration: none;
 }
 
-/* label */
-
+/* label rectangle (BASE) */
 .nav-label {
   position: relative;
   display: flex;
@@ -228,7 +231,6 @@ body.intro-active .site-content {
 }
 
 /* number circle */
-
 .nav-num {
   width: 44px;
   height: 44px;
@@ -243,7 +245,6 @@ body.intro-active .site-content {
 }
 
 /* braille square */
-
 .nav-braille {
   width: 44px;
   height: 44px;
@@ -255,13 +256,13 @@ body.intro-active .site-content {
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
 }
 
+/* dots (2 columns x 3 rows) */
 .braille-grid {
   display: grid;
   grid-template-columns: repeat(2, 6px);
   grid-template-rows: repeat(3, 6px);
   gap: 5px;
 }
-
 .braille-grid .dot {
   width: 6px;
   height: 6px;
@@ -269,26 +270,24 @@ body.intro-active .site-content {
   background: rgba(0, 0, 0, 0.35);
 }
 
+/* braille image variant */
 .braille-img {
   width: 22px;
   height: 22px;
   opacity: 0.75;
 }
 
-/* hover */
-
+/* hover/press feel (BASE) */
 .nav-row:hover .nav-label {
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.75),
     0 14px 26px rgba(0, 0, 0, 0.13);
   transform: translateY(-1px);
 }
-
 .nav-row:active .nav-label {
   transform: translateY(0px) scale(0.99);
 }
 
-/* ========================= Sketch SVG label ========================= */
-
+/* ========================= SideNav – Sketch SVG label (only when .is-sketch) ========================= */
 .nav-label.is-sketch {
   padding: 0;
   background: transparent;
@@ -297,6 +296,7 @@ body.intro-active .site-content {
   min-height: 56px;
 }
 
+/* SVG background */
 .nav-label.is-sketch::before {
   content: "";
   position: absolute;
@@ -306,6 +306,7 @@ body.intro-active .site-content {
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
 }
 
+/* Text on top */
 .nav-label.is-sketch .nav-label-text {
   position: relative;
   padding: 14px 22px;
@@ -317,16 +318,15 @@ body.intro-active .site-content {
   text-shadow: 0 0.4px 0 rgba(0, 0, 0, 0.3);
 }
 
+/* Optional: a tiny hand-drawn tilt */
 .nav-row .nav-label.is-sketch {
   transform: rotate(-0.3deg);
 }
-
 .nav-row:hover .nav-label.is-sketch {
   transform: translateY(-1px) rotate(-0.3deg);
 }
 
-/* ========================= Sketch number ========================= */
-
+/* ========================= Sketch SVG number circle (FORCE) ========================= */
 .nav-num.is-sketch {
   position: relative !important;
   width: 44px;
@@ -338,7 +338,6 @@ body.intro-active .site-content {
   box-shadow: none !important;
   transform: rotate(-0.35deg);
 }
-
 .nav-num.is-sketch::before {
   content: "" !important;
   position: absolute;
@@ -350,7 +349,6 @@ body.intro-active .site-content {
   pointer-events: none;
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
 }
-
 .nav-num-text {
   position: relative;
   z-index: 1;
@@ -360,17 +358,14 @@ body.intro-active .site-content {
   line-height: 1;
   text-shadow: 0 0.4px 0 rgba(0, 0, 0, 0.35);
 }
-
 .nav-row:hover .nav-num.is-sketch {
   transform: translateY(-1px) rotate(-0.35deg);
 }
-
 .nav-row:active .nav-num.is-sketch {
   transform: translateY(0) scale(0.96) rotate(-0.35deg);
 }
 
-/* ========================= Sketch braille ========================= */
-
+/* ========================= Sketch SVG braille block ========================= */
 .nav-braille.is-sketch {
   position: relative !important;
   width: 44px;
@@ -382,7 +377,6 @@ body.intro-active .site-content {
   box-shadow: none !important;
   transform: rotate(-0.35deg);
 }
-
 .nav-braille.is-sketch::before {
   content: "" !important;
   position: absolute;
@@ -394,13 +388,11 @@ body.intro-active .site-content {
   pointer-events: none;
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
 }
-
 .nav-braille.is-sketch .braille-grid {
   display: none;
 }
 
-/* ========================= FONT OVERRIDES ========================= */
-
+/* ========================= Force Shadows Into Light on SideNav ========================= */
 .nav-label.is-sketch .nav-label-text,
 .nav-num.is-sketch .nav-num-text {
   font-family: var(--font-sketch), "Shadows Into Light", cursive !important;
@@ -415,8 +407,7 @@ body.intro-active .site-content {
   --font-title: var(--font-title);
 }
 
-/* Headings */
-
+/* Make ALL headings use Style Script */
 h1,
 h2,
 h3,

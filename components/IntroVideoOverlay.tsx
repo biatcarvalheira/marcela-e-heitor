@@ -5,53 +5,59 @@ import { t } from "@/content/i18n"; // if this import fails, change to "../conte
 
 export function IntroVideoOverlay() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [desktop, setDesktop] = useState(false);
+
   const [visible, setVisible] = useState(true);
   const [fade, setFade] = useState(false);
 
-  useEffect(() => {
-    const update = () => setDesktop(window.innerWidth >= 768);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
+  // Hydration-safe: start null so SSR + first client render match
+  const [src, setSrc] = useState<string | null>(null);
+  const [poster, setPoster] = useState<string | null>(null);
 
-  const src = desktop ? t.introVideo.desktop : t.introVideo.mobile;
-  const poster = desktop ? t.introVideo.posterDesktop : t.introVideo.posterMobile;
-
-  // When overlay is visible, add a flag on <body> so layout can react
+  // On mount: mark intro active + ensure frame is NOT ready yet
   useEffect(() => {
     document.body.classList.add("intro-active");
+    document.body.classList.remove("frame-ready");
     return () => {
       document.body.classList.remove("intro-active");
     };
   }, []);
 
+  // Decide desktop/mobile AFTER mount
+  useEffect(() => {
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    setSrc(isDesktop ? t.introVideo.desktop : t.introVideo.mobile);
+    setPoster(
+      isDesktop ? t.introVideo.posterDesktop : t.introVideo.posterMobile
+    );
+  }, []);
+
   const finish = () => {
     setFade(true);
 
-    // remove the frame-hide flag a bit BEFORE we fully unmount,
-    // so the frame can fade in while the overlay fades out
+    // Show frame while overlay fades out
     setTimeout(() => {
       document.body.classList.remove("intro-active");
+      document.body.classList.add("frame-ready");
     }, 250);
 
     setTimeout(() => setVisible(false), 700);
   };
 
-  // Attempt autoplay
+  // Load + autoplay once src is available
   useEffect(() => {
     const el = videoRef.current;
-    if (!el) return;
+    if (!el || !src) return;
 
     try {
       el.currentTime = 0;
     } catch {}
 
+    el.load();
+
     const p = el.play();
     if (p && typeof (p as any).catch === "function") {
       (p as Promise<void>).catch(() => {
-        // Autoplay may be blocked; user tap will retry.
+        // autoplay may be blocked; user tap will retry
       });
     }
   }, [src]);
@@ -67,15 +73,12 @@ export function IntroVideoOverlay() {
         ${fade ? "opacity-0 pointer-events-none" : "opacity-100"}
         transition-opacity duration-700
       `}
-      style={{
-        width: "100vw",
-        height: "100vh",
-      }}
+      style={{ width: "100vw", height: "100vh" }}
     >
       <video
         ref={videoRef}
-        src={src}
-        poster={poster}
+        src={src ?? undefined}
+        poster={poster ?? undefined}
         autoPlay
         muted
         playsInline

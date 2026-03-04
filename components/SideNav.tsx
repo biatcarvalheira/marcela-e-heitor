@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { t } from "@/content/i18n";
 
 type NavRow = {
@@ -27,28 +28,34 @@ function BrailleDots() {
 
 export function SideNav() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // ✅ Avoid portal/hydration issues
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const rows: NavRow[] = useMemo(() => {
-  const baseItems = t.navItems.map((item, idx) => ({
-    ...item,
-    number: idx + 1, // temporary, we'll shift after
-  }));
-
-  const itemsWithInicio: NavRow[] = [
-    {
-      key: "inicio",
-      label: "Início",
-      href: "#home", // or "#hero"
-      number: 0,
-    },
-    ...baseItems.map((item) => ({
+    const baseItems = t.navItems.map((item, idx) => ({
       ...item,
-      number: item.number, // already shifted by +1 above
-    })),
-  ];
+      number: idx + 1,
+    }));
 
-  return itemsWithInicio;
-}, []);
+    const itemsWithInicio: NavRow[] = [
+      {
+        key: "inicio",
+        label: "Início",
+        href: "#home", // or "#hero"
+        number: 0,
+      },
+      ...baseItems.map((item) => ({
+        ...item,
+        number: item.number,
+      })),
+    ];
+
+    return itemsWithInicio;
+  }, []);
 
   // Close on ESC
   useEffect(() => {
@@ -69,7 +76,9 @@ export function SideNav() {
     };
   }, [open]);
 
-  return (
+  if (!mounted) return null;
+
+  const ui = (
     <>
       {/* Toggle */}
       <button
@@ -118,4 +127,7 @@ export function SideNav() {
       </aside>
     </>
   );
+
+  // ✅ Portal to <body> so it sits ABOVE the frame regardless of z-index contexts
+  return createPortal(ui, document.body);
 }

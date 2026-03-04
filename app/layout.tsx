@@ -37,8 +37,8 @@ export default function RootLayout({
           overflow-x-hidden
         `}
       >
-        {/* ===== FRAME OVERLAY (ALWAYS VISIBLE, EXCEPT DURING INTRO) ===== */}
-        <div className="site-frame pointer-events-none fixed inset-0 z-[80]">
+        {/* ===== FRAME OVERLAY (ALWAYS VISIBLE, BUT BELOW SIDENAV PORTAL) ===== */}
+        <div className="site-frame pointer-events-none fixed inset-0 z-[40]">
           {/* TOP */}
           <div className="absolute top-0 left-0 right-0 h-[32px] md:h-[64px]">
             <img
