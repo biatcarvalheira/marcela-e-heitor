@@ -69,7 +69,7 @@ export default function RootLayout({
             className="absolute right-0 top-0 h-dvh w-[32px] object-fill scale-x-[-1] md:hidden"
           />
 
-          {/* DESKTOP SIDES (md+) */}
+          {/* DESKTOP SIDES */}
           <div
             className="absolute top-0 bottom-0 left-0 hidden md:block w-[64px] bg-repeat-y bg-left"
             style={{
@@ -78,6 +78,7 @@ export default function RootLayout({
               backgroundPosition: "left top",
             }}
           />
+
           <div
             className="absolute top-0 bottom-0 right-0 hidden md:block w-[64px] bg-repeat-y bg-right scale-x-[-1]"
             style={{
@@ -89,7 +90,22 @@ export default function RootLayout({
         </div>
 
         {/* ===== CONTENT (SCROLLS UNDER FRAME) ===== */}
-        <div className="site-content relative z-[10] min-h-dvh pt-[32px] pb-[32px] px-[32px] md:pt-[64px] md:pb-[64px] md:px-[64px]">
+        <div
+          className="
+            site-content
+            relative
+            z-[10]
+            min-h-dvh
+
+            pt-[24px]
+            pb-[24px]
+            px-[32px]
+
+            md:pt-[48px]
+            md:pb-[48px]
+            md:px-[64px]
+          "
+        >
           {children}
         </div>
       </body>

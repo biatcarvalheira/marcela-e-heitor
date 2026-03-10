@@ -30,9 +30,27 @@ export function SideNav() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // ✅ Avoid portal/hydration issues
+  // show nav only after intro ends (body has .frame-ready)
+  const [navReady, setNavReady] = useState(false);
+
   useEffect(() => {
     setMounted(true);
+
+    // initial check
+    setNavReady(document.body.classList.contains("frame-ready"));
+
+    // watch for class changes on body (intro overlay toggles these)
+    const obs = new MutationObserver(() => {
+      const ready = document.body.classList.contains("frame-ready");
+      setNavReady(ready);
+
+      // safety: if intro starts again somehow, close menu
+      if (!ready) setOpen(false);
+    });
+
+    obs.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+    return () => obs.disconnect();
   }, []);
 
   const rows: NavRow[] = useMemo(() => {
@@ -77,6 +95,9 @@ export function SideNav() {
   }, [open]);
 
   if (!mounted) return null;
+
+  // ✅ Hide EVERYTHING until the intro is done
+  if (!navReady) return null;
 
   const ui = (
     <>
@@ -128,6 +149,5 @@ export function SideNav() {
     </>
   );
 
-  // ✅ Portal to <body> so it sits ABOVE the frame regardless of z-index contexts
   return createPortal(ui, document.body);
 }
