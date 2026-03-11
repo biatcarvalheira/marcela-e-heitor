@@ -37,32 +37,14 @@ export default function RootLayout({
           overflow-x-hidden
         `}
       >
-        {/* ===== FRAME OVERLAY (ALWAYS VISIBLE, BUT BELOW SIDENAV PORTAL) ===== */}
         <div className="site-frame pointer-events-none fixed inset-0 z-[40]">
-          {/* TOP */}
-          <div className="absolute top-0 left-0 right-0 h-[32px] md:h-[64px]">
-            <img
-              src="/images/frame-top.png"
-              alt=""
-              className="w-full h-full object-cover md:object-fill"
-            />
-          </div>
-
-          {/* BOTTOM */}
-          <div className="absolute bottom-0 left-0 right-0 h-[32px] md:h-[64px]">
-            <img
-              src="/images/frame-bottom.png"
-              alt=""
-              className="w-full h-full object-cover md:object-fill"
-            />
-          </div>
-
           {/* MOBILE SIDES */}
           <img
             src="/images/frame-side.png"
             alt=""
             className="absolute left-0 top-0 h-dvh w-[32px] object-fill md:hidden"
           />
+
           <img
             src="/images/frame-side.png"
             alt=""
@@ -87,22 +69,37 @@ export default function RootLayout({
               backgroundPosition: "left top",
             }}
           />
+
+          {/* TOP FRAME */}
+          <div className="absolute top-0 left-[14px] right-[12px] h-[32px] md:left-0 md:right-0 md:h-[64px] z-[2]">
+            <img
+              src="/images/frame-top.png"
+              alt=""
+              className="w-full h-full object-cover md:object-fill"
+            />
+          </div>
+
+          {/* BOTTOM FRAME */}
+          <div className="absolute bottom-0 left-[14px] right-[12px] h-[32px] md:left-0 md:right-0 md:h-[64px] z-[2]">
+            <img
+              src="/images/frame-bottom.png"
+              alt=""
+              className="w-full h-full object-cover md:object-fill"
+            />
+          </div>
         </div>
 
-        {/* ===== CONTENT (SCROLLS UNDER FRAME) ===== */}
         <div
           className="
             site-content
             relative
             z-[10]
             min-h-dvh
-
             pt-[24px]
             pb-[24px]
             px-[32px]
-
-            md:pt-[48px]
-            md:pb-[48px]
+            md:pt-[64px]
+            md:pb-[64px]
             md:px-[64px]
           "
         >
