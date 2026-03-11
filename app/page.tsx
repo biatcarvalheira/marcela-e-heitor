@@ -48,6 +48,41 @@ export default function Page() {
         </div>
       </Section>
 
+{/* Intro */}
+      <Section id="intro" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center justify-center text-center px-6 md:px-8 py-16 md:py-20">
+          <div className="w-full flex justify-center">
+            <div className="max-w-2xl">
+              <div className="space-y-6 text-[#5a2423]" style={{ fontFamily: "var(--font-sketch)" }}>
+                <p className="text-lg md:text-xl leading-relaxed font-semibold">
+                  É com profunda alegria que compartilhamos com você os detalhes do nosso grande dia.
+                </p>
+
+                <p className="text-base md:text-lg leading-relaxed">
+                  Nossa história nasceu em um lugar abençoado e, desde o início, foi construída não apenas por nós dois, mas também pelas mãos, orações e presenças de pessoas que sempre caminharam ao nosso lado. Amigos e família que fizeram parte de cada momento decisivo, celebraram nossas conquistas e sustentaram nossos passos e que continuarão ao nosso lado, inclusive no altar.
+                </p>
+
+                <p className="text-base md:text-lg leading-relaxed">
+                  Crescemos juntos. Atravessamos a adolescência, amadurecemos, aprendemos e nos fortalecemos. Descobrimos que aquilo que faltava em um sempre encontrava abrigo no outro. Entre desafios e sonhos compartilhados, fomos edificando uma base firme, sustentada pelo amor e pela fé.
+                </p>
+
+                <p className="text-base md:text-lg leading-relaxed">
+                  Em um cenário digno de cinema, sob a luz da Aurora Boreal, veio o pedido de casamento, um instante que marcou para sempre o início de uma nova etapa. Celebramos o noivado, o casamento civil e agora nos preparamos para o momento mais esperado: a consagração do nosso matrimônio diante de Deus.
+                </p>
+
+                <p className="text-base md:text-lg leading-relaxed">
+                  Este novo capítulo será escrito com união, sabedoria e companheirismo. E se você está aqui, é porque faz parte dessa trajetória, do passado que nos formou e do futuro que começamos a construir.
+                </p>
+
+                <p className="text-base md:text-lg leading-relaxed">
+                  Nossa gratidão à Deus, que guia nossos caminhos; aos nossos pais, Marcus, Cristiane, Gilberto e Dione; aos nossos irmãos, às nossas avós e a todos que, com amor, nos trouxeram até aqui.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
 {/* Programacao */}
       <Section
   id="programacao"

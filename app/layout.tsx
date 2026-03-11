@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Shadows_Into_Light, Style_Script } from "next/font/google";
+import { Shadows_Into_Light, Tangerine } from "next/font/google";
 
 const shadowsIntoLight = Shadows_Into_Light({
   subsets: ["latin"],
@@ -8,9 +8,9 @@ const shadowsIntoLight = Shadows_Into_Light({
   variable: "--font-sketch",
 });
 
-const styleScript = Style_Script({
+const tangerine = Tangerine({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
   variable: "--font-title",
 });
 
@@ -27,11 +27,11 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${shadowsIntoLight.variable} ${styleScript.variable}`}
+      className={`${shadowsIntoLight.variable} ${tangerine.variable}`}
     >
       <body
         className={`
-          ${shadowsIntoLight.variable} ${styleScript.variable}
+          ${shadowsIntoLight.variable} ${tangerine.variable}
           bg-[#debcbb]
           relative
           overflow-x-hidden
