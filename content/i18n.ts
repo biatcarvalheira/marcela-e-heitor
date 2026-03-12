@@ -6,6 +6,7 @@ export type BgAsset = {
 
 export type SectionKey =
   | "home"
+  | "intro"
   | "programacao"
   | "comoChegar"
   | "rsvp"
@@ -38,6 +39,10 @@ export const t = {
       placeholder: "/images/placeholder-bg.png",
     },
 
+    intro: {
+      placeholder: "/images/placeholder-bg.png",
+    },
+
     programacao: {
       placeholder: "/images/placeholder-bg.png",
     },
@@ -54,29 +59,35 @@ export const t = {
       title: "Bem-vindos",
       subtitle: "Estamos muito felizes em celebrar com vocês!",
     },
+
+    intro: {
+      id: "intro",
+      title: "Introdução",
+    },
+
     programacao: {
       id: "programacao",
       title: "Programação",
       content: ["Cerimônia: 15h", "Recepção: 16h30", "Traje: Social"],
     },
 
-    // ✅ NEW SECTION
     comoChegar: {
       id: "como-chegar",
       title: "Como chegar",
     },
+
     hospedagem1: {
       id: "hospedagem",
       title: "Hospedagem",
       content: ["Sugestões de hotéis em breve."],
     },
-      hospedagem2: {
+
+    hospedagem2: {
       id: "hospedagem",
       title: "Hospedagem",
       content: ["Sugestões de hotéis em breve."],
     },
 
-    // (Optional) add when you build the section
     cabeloMake: {
       id: "cabelo-make",
       title: "Cabelo & Make",
@@ -88,6 +99,7 @@ export const t = {
       title: "Dicas",
       content: ["Informações úteis em breve."],
     },
+
     presentes: {
       id: "presentes",
       title: "Presentes",
@@ -95,7 +107,6 @@ export const t = {
     },
   },
 
-  // ✅ keys updated to match SectionKey, hrefs stay kebab-case
   navItems: [
     { key: "programacao", label: "Programação", href: "#programacao" },
     { key: "comoChegar", label: "Como Chegar", href: "#como-chegar" },
