@@ -10,7 +10,7 @@ const shadowsIntoLight = Shadows_Into_Light({
 });
 
 const champignon = localFont({
-  src: "../public/fonts/champignon.otf",
+  src: "../public/fonts/Champignon.otf",
   variable: "--font-title",
   display: "swap",
 });
