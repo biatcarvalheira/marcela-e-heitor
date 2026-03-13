@@ -17,7 +17,7 @@ export type SectionKey =
 
 export const t = {
   site: {
-    coupleName: "Marcela e Heitor",
+    coupleName: "Marcela & Heitor",
     dateLine: "x de xxxxx de 2026",
   },
 

@@ -189,7 +189,6 @@ body.intro-active .site-content {
   gap: 14px;
 }
 
-/* one row like the elevator style */
 .nav-row {
   display: grid;
   grid-template-columns: 1fr 44px 44px;
@@ -198,7 +197,6 @@ body.intro-active .site-content {
   text-decoration: none;
 }
 
-/* label rectangle (base) */
 .nav-label {
   position: relative;
   display: flex;
@@ -221,7 +219,6 @@ body.intro-active .site-content {
   display: block;
 }
 
-/* number circle */
 .nav-num {
   width: 44px;
   height: 44px;
@@ -235,7 +232,6 @@ body.intro-active .site-content {
   font-weight: 800;
 }
 
-/* braille square */
 .nav-braille {
   width: 44px;
   height: 44px;
@@ -247,7 +243,6 @@ body.intro-active .site-content {
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6);
 }
 
-/* dots */
 .braille-grid {
   display: grid;
   grid-template-columns: repeat(2, 6px);
@@ -268,7 +263,6 @@ body.intro-active .site-content {
   opacity: 0.75;
 }
 
-/* hover / press */
 .nav-row:hover .nav-label {
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.75),
     0 14px 26px rgba(0, 0, 0, 0.13);
@@ -301,13 +295,18 @@ body.intro-active .site-content {
 
 .nav-label.is-sketch .nav-label-text {
   position: relative;
+  z-index: 1;
   padding: 14px 22px;
   color: #3a2f2a;
-  font-weight: 900;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sketch), "Shadows Into Light", cursive !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0.06em !important;
   font-size: 12px;
   text-transform: uppercase;
   text-shadow: 0 0.4px 0 rgba(0, 0, 0, 0.3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .nav-row .nav-label.is-sketch {
@@ -347,11 +346,16 @@ body.intro-active .site-content {
 .nav-num-text {
   position: relative;
   z-index: 1;
-  font-weight: 900;
+  font-family: var(--font-sketch), "Shadows Into Light", cursive !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
   color: #3a2f2a;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1;
   text-shadow: 0 0.4px 0 rgba(0, 0, 0, 0.35);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .nav-row:hover .nav-num.is-sketch {
@@ -392,23 +396,7 @@ body.intro-active .site-content {
   display: none;
 }
 
-/* ========================= SIDENAV FONT FORCE ========================= */
-
-.nav-label.is-sketch .nav-label-text,
-.nav-num.is-sketch .nav-num-text {
-  font-family: var(--font-sketch), "Shadows Into Light", cursive !important;
-  font-weight: 400 !important;
-  font-style: normal !important;
-  letter-spacing: 0.06em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /* ========================= TITLE FONT ========================= */
-
-:root {
-  --font-title: var(--font-title);
-}
 
 h1,
 h2,

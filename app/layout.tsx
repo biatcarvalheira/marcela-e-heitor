@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Shadows_Into_Light, Tangerine } from "next/font/google";
+import { Shadows_Into_Light } from "next/font/google";
+import localFont from "next/font/local";
 
 const shadowsIntoLight = Shadows_Into_Light({
   subsets: ["latin"],
@@ -8,10 +9,10 @@ const shadowsIntoLight = Shadows_Into_Light({
   variable: "--font-sketch",
 });
 
-const tangerine = Tangerine({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const champignon = localFont({
+  src: "../public/fonts/Champignon.otf",
   variable: "--font-title",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,11 +28,11 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${shadowsIntoLight.variable} ${tangerine.variable}`}
+      className={`${shadowsIntoLight.variable} ${champignon.variable}`}
     >
       <body
         className={`
-          ${shadowsIntoLight.variable} ${tangerine.variable}
+          ${shadowsIntoLight.variable} ${champignon.variable}
           bg-[#debcbb]
           relative
           overflow-x-hidden
