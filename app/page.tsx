@@ -586,6 +586,15 @@ export default function Page() {
         >
           Mickey
         </a>
+        <br />
+          <a
+          href="https://www.instagram.com/accanto.casa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold hover:underline"
+        >
+          Accanto Casa
+        </a>
       </p>
     </div>
 
