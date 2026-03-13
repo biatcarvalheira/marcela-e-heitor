@@ -37,12 +37,15 @@ export default function Page() {
             <h1
               className="
           absolute
-          top-24 sm:top-28 md:top-32
+          top-36 sm:top-28 md:top-32
           left-1/2 -translate-x-1/2
-          text-5xl sm:text-6xl md:text-7xl
+          flex items-center justify-center gap-4
+          text-4xl sm:text-6xl md:text-7xl
         "
             >
-              {t.site.coupleName}
+              <span>Marcela</span>
+              <span>&</span>
+              <span>Heitor</span>
             </h1>
           </div>
         </div>
@@ -137,7 +140,7 @@ export default function Page() {
   <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
     
     {/* TITLE */}
-    <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+    <h2 className="mt-16 md:mt-20 text-4xl md:text-5xl text-[#1c5134]">
       {t.sections.programacao.title}
     </h2>
 
@@ -208,7 +211,7 @@ export default function Page() {
       <Section id="como-chegar" overlayClassName="">
         <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
           {/* TITLE */}
-          <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+          <h2 className="mt-16 md:mt-20 text-4xl md:text-5xl text-[#1c5134]">
             {t.sections.comoChegar.title}
           </h2>
 
@@ -271,7 +274,7 @@ export default function Page() {
   <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
     
     {/* TITLE */}
-    <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+    <h2 className="mt-16 md:mt-20 text-4xl md:text-5xl text-[#1c5134]">
       {t.sections.hospedagem1.title}
     </h2>
 
@@ -433,7 +436,7 @@ export default function Page() {
   <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
     
     {/* TITLE */}
-    <h2 className="mt-16 md:mt-20 text-5xl text-[#1c5134]">
+    <h2 className="mt-16 md:mt-20 text-4xl md:text-5xl text-[#1c5134]">
       {t.sections.cabeloMake.title}
     </h2>
 
@@ -547,7 +550,7 @@ export default function Page() {
   <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
     
     {/* TITLE */}
-    <h2 className="pt-16 md:pt-20 text-5xl text-[#1c5134]">
+    <h2 className="pt-16 md:pt-20 text-4xl md:text-5xl text-[#1c5134]">
       {t.sections.presentes.title}
     </h2>
 
