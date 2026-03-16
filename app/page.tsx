@@ -131,7 +131,7 @@ export default function Page() {
 </Section>
 
 {/* Programacao */}
-      <Section
+<Section
   id="programacao"
   bgMobileClass="bg-programacao-mobile bg-cover bg-center bg-no-repeat"
   bgDesktopClass="bg-programacao-desktop bg-cover bg-center bg-no-repeat"
@@ -186,9 +186,9 @@ export default function Page() {
         style={{ fontFamily: "var(--font-sketch)" }}
         className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
       >
-        A cerimônia religiosa será na <strong>Capela Santa Luzia</strong>,
-        às <strong>18h</strong>, seguida da recepção no{" "}
-        <strong>Hotel Rosewood</strong> (salão principal) às{" "}
+        No dia <strong>01 de agosto de 2026</strong>, a cerimônia religiosa será na{" "}
+        <strong>Capela Santa Luzia</strong>, às <strong>18h</strong>, seguida da
+        recepção no <strong>Hotel Rosewood</strong> (salão principal) às{" "}
         <strong>19h30</strong>, em São Paulo.
         <br />
         <br />
