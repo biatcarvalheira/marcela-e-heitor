@@ -111,6 +111,7 @@ export const t = {
     { key: "programacao", label: "Programação", href: "#programacao" },
     { key: "comoChegar", label: "Como Chegar", href: "#como-chegar" },
     { key: "hospedagem", label: "Hospedagem", href: "#hospedagem-1" },
+    { key: "dicas", label: "Dicas", href: "#dicas" },
     { key: "cabeloMake", label: "Cabelo & Make", href: "#cabelo-make" },
     { key: "presentes", label: "Presentes", href: "#presentes" },
   ],

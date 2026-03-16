@@ -323,6 +323,339 @@ export default function Page() {
         </div>
       </Section>
 
+      {/* Hospedagem 2 (no title, text before animation) */}
+      <Section id="hospedagem-2" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
+          {/* TEXT (before animation) */}
+          <div className="w-full flex justify-center pt-16 md:pt-20">
+            <p
+              style={{ fontFamily: "var(--font-sketch)" }}
+              className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
+            >
+              Também indicamos outros hotéis na região (distância em km a partir
+              do Hotel Rosewood):
+              <br />
+              <br />
+              <a
+                href="https://www.fasano.com.br/hotel/hotel-fasano-sao-paulo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:underline"
+              >
+                Hotel Fasano - 2.8 km - 5 estrelas
+              </a>
+              <br />
+              <a
+                href="https://www.bluetree.com.br/hotel/blue-tree-premium-paulista"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:underline"
+              >
+                Blue Tree Paulista - 1.6 km - 4 estrelas
+              </a>
+              <br />
+              <a
+                href="https://cadoro.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:underline"
+              >
+                Hotel Cadoro - 2.2 km - 4 estrelas
+              </a>
+              <br />
+              <a
+                href="https://www.intercityhoteis.com.br/hotel-sao-paulo/hotel-intercity-pamplona-paulista"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:underline"
+              >
+                Hotel Intercity Pamplona - 240m - 3 estrelas
+              </a>
+              <br />
+              <a
+                href="https://all.accor.com/hotel/9610/index.pt-br.shtml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold hover:underline"
+              >
+                Ibis Budget Frei Caneca - 1.8 km - 2 estrelas
+              </a>
+            </p>
+          </div>
+
+          {/* SMALL GAP */}
+          <div className="h-2 md:h-6" />
+
+          {/* ANIMATION AREA */}
+          <div className="mt-4 md:mt-10 w-full flex items-center justify-center">
+            {/* MOBILE VERSION */}
+            <img
+              src="/images/hospedagem-2-animation-mobile.gif"
+              alt=""
+              className="
+          block md:hidden
+          w-[100vw]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+          scale-[1.1]
+        "
+            />
+
+            {/* DESKTOP VERSION */}
+            <img
+              src="/images/hospedagem-2-animation.gif"
+              alt=""
+              className="
+          hidden md:block
+          w-[560px] lg:w-[680px] xl:w-[760px]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+        "
+            />
+          </div>
+
+          {/* BOTTOM PADDING */}
+          <div className="h-10 md:h-16" />
+        </div>
+      </Section>
+
+      {/* Dicas */}
+      <Section id="dicas" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
+          <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134]">
+            {t.sections.dicas.title}
+          </h2>
+
+          <div className="mt-6 md:mt-10 w-full flex items-center justify-center">
+            {/* Mobile image */}
+            <img
+              src="/images/dicas-mobile.png"
+              alt=""
+              className="
+          block md:hidden
+          w-[240px]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+        "
+            />
+
+            {/* Desktop image */}
+            <img
+              src="/images/dicas-desktop.png"
+              alt=""
+              className="
+          hidden md:block
+          w-[360px] lg:w-[440px] xl:w-[520px]
+          h-auto
+          object-contain
+          pointer-events-none
+          select-none
+        "
+            />
+          </div>
+
+          <div className="h-4 md:h-6" />
+
+          <div className="w-full flex justify-center pb-12 md:pb-20">
+            <p
+              style={{ fontFamily: "var(--font-sketch)" }}
+              className="text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed"
+            >
+              São Paulo é uma cidade vibrante, cheia de cultura, boa comida e
+              programas para todos os gostos. Para quem vem de fora e quer
+              aproveitar um pouco mais a cidade, reunimos aqui alguns dos nossos
+              restaurantes favoritos e algumas sugestões de passeios. Esperamos
+              que vocês aproveitem!
+            </p>
+          </div>
+        </div>
+      </Section>
+
+{/* Dicas 2 */}
+<Section id="dicas-2" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+
+    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+      Restaurantes
+    </h2>
+
+    <div
+      style={{ fontFamily: "var(--font-sketch)" }}
+      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
+    >
+
+      <p className="font-semibold mb-2">Japonês</p>
+      <ul className="mb-6 space-y-1">
+        <li>• <a href="https://www.makotosan.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Makoto</a></li>
+        <li>• <a href="https://www.instagram.com/shinzushioficial/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Shinzushi</a></li>
+        <li>• <a href="https://www.grupoemerestaurantes.com.br/mi-ado" target="_blank" className="underline font-semibold hover:opacity-70 transition">Miado</a></li>
+      </ul>
+
+      <p className="font-semibold mb-2">Italiano</p>
+      <ul className="mb-6">
+        <li>• <a href="https://www.instagram.com/bottegabernacca/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Bottega Bernacca</a></li>
+      </ul>
+
+      <p className="font-semibold mb-2">Francês</p>
+      <ul className="mb-6">
+        <li>• <a href="https://entrecoteolivier.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">L’Entrecôte d’Olivier</a></li>
+      </ul>
+
+      <p className="font-semibold mb-2">Carnes</p>
+      <ul className="mb-6">
+        <li>• <a href="https://drtche.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Dr. Tchê La Parrilla de La Villa</a></li>
+      </ul>
+
+      <p className="font-semibold mb-2">Frutos do mar</p>
+      <ul className="mb-6">
+        <li>• <a href="https://www.instagram.com/barumarisqueria/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Baru Marisqueira</a></li>
+      </ul>
+
+      <p className="font-semibold mb-2">Clássicos paulistanos</p>
+      <ul className="mb-6 space-y-1">
+        <li>• <a href="https://www.instagram.com/bardomane/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Bar do Mané</a></li>
+        <li>• <a href="https://almanara.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Almanara</a></li>
+        <li>• <a href="https://www.instagram.com/saocarloslanches/" target="_blank" className="underline font-semibold hover:opacity-70 transition">São Carlos Lanches</a></li>
+        <li>• <a href="https://zdeli.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Z Deli Sandwich Shop</a></li>
+      </ul>
+
+      <p className="font-semibold mb-2">Café</p>
+      <ul>
+        <li>• <a href="https://www.instagram.com/desegunda.restaurante/" target="_blank" className="underline font-semibold hover:opacity-70 transition">De Segunda Café</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</Section>
+
+{/* Dicas 3 */}
+<Section id="dicas-3" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+
+    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+      O que fazer em São Paulo
+    </h2>
+
+    <div
+      style={{ fontFamily: "var(--font-sketch)" }}
+      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left space-y-6"
+    >
+
+      <div>
+        <p>
+          <a href="https://parqueibirapuera.org/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
+            Parque Ibirapuera
+          </a>
+        </p>
+        <p>
+          Perfeito para caminhar, correr ou andar de bicicleta em um dos parques mais icônicos da cidade.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <a href="https://masp.org.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
+            MASP
+          </a>
+        </p>
+        <p>
+          Museu de arte na Avenida Paulista, conhecido pela arquitetura marcante e excelentes exposições.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <a href="https://mercadomunicipalsp.com/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
+            Mercado Municipal
+          </a>
+        </p>
+        <p>
+          Um passeio clássico para provar frutas tropicais e o famoso sanduíche de mortadela.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</Section>
+
+{/* Dicas 4 */}
+<Section id="dicas-4" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+
+    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+      Compras
+    </h2>
+
+    <div
+      style={{ fontFamily: "var(--font-sketch)" }}
+      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left space-y-6"
+    >
+
+      <div>
+        <p>
+          <a href="https://cidadejardimshopping.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
+            Shopping Cidade Jardim
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <p className="font-semibold">Região dos Jardins</p>
+        <p>
+          Uma das áreas mais gostosas da cidade para passear entre lojas, cafés e restaurantes.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <a href="https://www.cidadematarazzo.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
+            Cidade Matarazzo / Mata Lab
+          </a>
+        </p>
+        <p>
+          Espaço de moda, design e lifestyle dentro do complexo do Rosewood.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</Section>
+
+{/* Dicas 5 */}
+<Section id="dicas-5" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+
+    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+      Treino e bem-estar
+    </h2>
+
+    <div
+      style={{ fontFamily: "var(--font-sketch)" }}
+      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
+    >
+
+      <ul className="space-y-2">
+        <li>• <a href="https://parqueibirapuera.org/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Corrida ou caminhada no Ibirapuera</a></li>
+        <li>• <a href="https://studiovelocity.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Aula de spinning na Velocity Studio</a></li>
+        <li>• <a href="https://lescinqgym.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Yoga ou pilates no Les Cinq Gym</a></li>
+        <li>• <a href="https://www.funcionalfight.com/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Luta + funcional no Funcional Fight Club</a></li>
+        <li>• <a href="https://rosewoodhotels.com/en/sao-paulo/wellness/asaya-spa" target="_blank" className="underline font-semibold hover:opacity-70 transition">Spa Asaya dentro do Rosewood</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</Section>
+
       {/* Cabelo & Make */}
       <Section id="cabelo-make" overlayClassName="">
         <div className="min-h-screen w-full flex flex-col items-center text-center px-6 md:px-8">
