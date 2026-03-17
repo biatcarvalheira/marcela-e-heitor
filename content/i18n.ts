@@ -57,7 +57,7 @@ export const t = {
   sections: {
     home: {
       id: "home",
-      title: "Bem-vindos",
+      title: "Marcela & Heitor",
       subtitle: "Estamos muito felizes em celebrar com vocês!",
     },
 

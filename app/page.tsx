@@ -11,45 +11,51 @@ export default function Page() {
       <SideNav />
 
       {/* Home - Hero */}
-      <Section id="home">
-        <div className="relative min-h-screen overflow-hidden">
-          {/* Mobile GIF */}
-          <div className="absolute inset-0 md:hidden">
-            <img
-              src="/images/home-mobile.gif"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+   <Section id="home">
+  <div className="relative min-h-screen overflow-hidden">
+    
+    {/* Mobile GIF */}
+    <div className="absolute inset-0 md:hidden">
+      <img
+        src="/images/home-mobile.gif"
+        alt=""
+        className="w-full h-full object-cover"
+      />
+    </div>
 
-          {/* Desktop GIF */}
-          <div className="absolute inset-0 hidden md:block">
-            <img
-              src="/images/home-desktop.gif"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+    {/* Desktop GIF */}
+    <div className="absolute inset-0 hidden md:block">
+      <img
+        src="/images/home-desktop.gif"
+        alt=""
+        className="w-full h-full object-cover"
+      />
+    </div>
 
-          {/* ===== Title ===== */}
-          <div className="relative z-10 min-h-screen text-white text-center px-6">
-            <h1
-              className="
-                absolute
-                top-36 sm:top-28 md:top-32
-                left-1/2 -translate-x-1/2
-                flex items-center justify-center gap-4
-                text-4xl sm:text-6xl md:text-7xl
-                font-semibold
-              "
-            >
-              <span>Marcela</span>
-              <span>&</span>
-              <span>Heitor</span>
-            </h1>
-          </div>
-        </div>
-      </Section>
+    {/* ===== Title ===== */}
+    <div className="relative z-10 min-h-screen text-white text-center px-6">
+      <h1
+  className="
+    absolute
+    top-28 sm:top-28 md:top-32
+    left-1/2 -translate-x-1/2
+    w-full
+    px-2
+    text-center
+    text-[clamp(3.6rem,9vw,4.5rem)]
+    md:text-7xl
+    font-semibold
+    leading-[0.9]
+  "
+>
+  <span className="block sm:inline">Marcela</span>
+  <span className="block sm:inline">&</span>
+  <span className="block sm:inline mt-6 sm:mt-0">Heitor</span>
+</h1>
+    </div>
+
+  </div>
+</Section>
 
       {/* Intro */}
       <Section
@@ -193,16 +199,14 @@ export default function Page() {
             >
               No dia <strong>01 de agosto de 2026</strong>, a cerimônia
               religiosa será na <strong>Capela Santa Luzia</strong>, às{" "}
-              <strong>18h</strong>, seguida da recepção no{" "}
+              <strong>17h30</strong>, seguida da recepção no{" "}
               <strong>Hotel Rosewood</strong> (salão principal) às{" "}
               <strong>19h30</strong>, em São Paulo.
               <br />
               <br />
               <strong>Traje:</strong> social completo.{" "}
               <a
-                href="/images/moodboard-programacao.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/moodboard"
                 className="underline underline-offset-4 hover:opacity-80 transition"
               >
                 Clique aqui
