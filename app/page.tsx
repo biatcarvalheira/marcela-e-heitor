@@ -2,6 +2,7 @@ import { IntroVideoOverlay } from "@/components/IntroVideoOverlay";
 import { SideNav } from "@/components/SideNav";
 import { Section } from "@/components/Section";
 import { t } from "@/content/i18n";
+import { WeddingWeather } from "@/components/WeddingWeather";
 
 export default function Page() {
   return (
@@ -650,6 +651,40 @@ export default function Page() {
         <li>• <a href="https://www.funcionalfight.com/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Luta + funcional no Funcional Fight Club</a></li>
         <li>• <a href="https://rosewoodhotels.com/en/sao-paulo/wellness/asaya-spa" target="_blank" className="underline font-semibold hover:opacity-70 transition">Spa Asaya dentro do Rosewood</a></li>
       </ul>
+
+    </div>
+
+  </div>
+</Section>
+
+{/* Clima */}
+<Section id="clima" overlayClassName="">
+  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+
+    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+      Clima
+    </h2>
+
+    <div
+      style={{ fontFamily: "var(--font-sketch)" }}
+      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
+    >
+
+      <p>
+        No início de agosto, São Paulo costuma ter um clima ameno e agradável, típico do inverno paulistano. As temperaturas médias ficam entre <span className="font-semibold">12 °C e 24 °C</span>, com dias ensolarados ou parcialmente nublados e noites mais frescas.
+      </p>
+
+      <p className="mt-4">
+        Esse também é um dos períodos mais secos do ano, com baixa chance de chuva — ideal para aproveitar a cidade e celebrar ao ar livre.
+      </p>
+
+      <p className="mt-4">
+        Recomendamos trazer um <span className="font-semibold">casaco leve</span> para a noite ✨
+      </p>
+
+      <p className="mt-6 text-sm opacity-70">
+        *Esta é apenas uma estimativa com base em dados históricos. A previsão atualizada será exibida aqui mais perto da data do casamento.*
+      </p>
 
     </div>
 

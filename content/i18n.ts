@@ -13,6 +13,7 @@ export type SectionKey =
   | "hospedagem"
   | "cabeloMake"
   | "dicas"
+  | "clima"
   | "presentes";
 
 export const t = {
@@ -112,6 +113,7 @@ export const t = {
     { key: "comoChegar", label: "Como Chegar", href: "#como-chegar" },
     { key: "hospedagem", label: "Hospedagem", href: "#hospedagem-1" },
     { key: "dicas", label: "Dicas", href: "#dicas" },
+    { key: "clima", label: "Clima", href: "#clima" },
     { key: "cabeloMake", label: "Cabelo & Make", href: "#cabelo-make" },
     { key: "presentes", label: "Presentes", href: "#presentes" },
   ],
