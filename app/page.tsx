@@ -478,218 +478,385 @@ export default function Page() {
         </div>
       </Section>
 
-{/* Dicas 2 */}
-<Section id="dicas-2" overlayClassName="">
-  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+      {/* Dicas 2 */}
+      <Section id="dicas-2" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+          <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+            Restaurantes
+          </h2>
 
-    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
-      Restaurantes
-    </h2>
+          <div
+            style={{ fontFamily: "var(--font-sketch)" }}
+            className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
+          >
+            <p className="font-semibold mb-2">Japonês</p>
+            <ul className="mb-6 space-y-1">
+              <li>
+                •{" "}
+                <a
+                  href="https://www.makotosan.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Makoto
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://www.instagram.com/shinzushioficial/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Shinzushi
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://www.grupoemerestaurantes.com.br/mi-ado"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Miado
+                </a>
+              </li>
+            </ul>
 
-    <div
-      style={{ fontFamily: "var(--font-sketch)" }}
-      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
-    >
+            <p className="font-semibold mb-2">Italiano</p>
+            <ul className="mb-6">
+              <li>
+                •{" "}
+                <a
+                  href="https://www.instagram.com/bottegabernacca/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Bottega Bernacca
+                </a>
+              </li>
+            </ul>
 
-      <p className="font-semibold mb-2">Japonês</p>
-      <ul className="mb-6 space-y-1">
-        <li>• <a href="https://www.makotosan.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Makoto</a></li>
-        <li>• <a href="https://www.instagram.com/shinzushioficial/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Shinzushi</a></li>
-        <li>• <a href="https://www.grupoemerestaurantes.com.br/mi-ado" target="_blank" className="underline font-semibold hover:opacity-70 transition">Miado</a></li>
-      </ul>
+            <p className="font-semibold mb-2">Francês</p>
+            <ul className="mb-6">
+              <li>
+                •{" "}
+                <a
+                  href="https://entrecoteolivier.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  L’Entrecôte d’Olivier
+                </a>
+              </li>
+            </ul>
 
-      <p className="font-semibold mb-2">Italiano</p>
-      <ul className="mb-6">
-        <li>• <a href="https://www.instagram.com/bottegabernacca/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Bottega Bernacca</a></li>
-      </ul>
+            <p className="font-semibold mb-2">Carnes</p>
+            <ul className="mb-6">
+              <li>
+                •{" "}
+                <a
+                  href="https://drtche.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Dr. Tchê La Parrilla de La Villa
+                </a>
+              </li>
+            </ul>
 
-      <p className="font-semibold mb-2">Francês</p>
-      <ul className="mb-6">
-        <li>• <a href="https://entrecoteolivier.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">L’Entrecôte d’Olivier</a></li>
-      </ul>
+            <p className="font-semibold mb-2">Frutos do mar</p>
+            <ul className="mb-6">
+              <li>
+                •{" "}
+                <a
+                  href="https://www.instagram.com/barumarisqueria/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Baru Marisqueira
+                </a>
+              </li>
+            </ul>
 
-      <p className="font-semibold mb-2">Carnes</p>
-      <ul className="mb-6">
-        <li>• <a href="https://drtche.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Dr. Tchê La Parrilla de La Villa</a></li>
-      </ul>
+            <p className="font-semibold mb-2">Clássicos paulistanos</p>
+            <ul className="mb-6 space-y-1">
+              <li>
+                •{" "}
+                <a
+                  href="https://www.instagram.com/bardomane/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Bar do Mané
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://almanara.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Almanara
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://www.instagram.com/saocarloslanches/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  São Carlos Lanches
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://zdeli.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Z Deli Sandwich Shop
+                </a>
+              </li>
+            </ul>
 
-      <p className="font-semibold mb-2">Frutos do mar</p>
-      <ul className="mb-6">
-        <li>• <a href="https://www.instagram.com/barumarisqueria/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Baru Marisqueira</a></li>
-      </ul>
+            <p className="font-semibold mb-2">Café</p>
+            <ul>
+              <li>
+                •{" "}
+                <a
+                  href="https://www.instagram.com/desegunda.restaurante/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  De Segunda Café
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </Section>
 
-      <p className="font-semibold mb-2">Clássicos paulistanos</p>
-      <ul className="mb-6 space-y-1">
-        <li>• <a href="https://www.instagram.com/bardomane/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Bar do Mané</a></li>
-        <li>• <a href="https://almanara.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Almanara</a></li>
-        <li>• <a href="https://www.instagram.com/saocarloslanches/" target="_blank" className="underline font-semibold hover:opacity-70 transition">São Carlos Lanches</a></li>
-        <li>• <a href="https://zdeli.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Z Deli Sandwich Shop</a></li>
-      </ul>
+      {/* Dicas 3 */}
+      <Section id="dicas-3" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+          <h2 className="mt-16 md:mt-20 text-4xl md:text-7xl font-semibold text-[#1c5134] text-center leading-tight">
+            O que fazer em
+            <br className="md:hidden" /> São Paulo
+          </h2>
 
-      <p className="font-semibold mb-2">Café</p>
-      <ul>
-        <li>• <a href="https://www.instagram.com/desegunda.restaurante/" target="_blank" className="underline font-semibold hover:opacity-70 transition">De Segunda Café</a></li>
-      </ul>
+          <div
+            style={{ fontFamily: "var(--font-sketch)" }}
+            className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left space-y-6"
+          >
+            <div>
+              <p>
+                <a
+                  href="https://parqueibirapuera.org/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Parque Ibirapuera
+                </a>
+              </p>
+              <p>
+                Perfeito para caminhar, correr ou andar de bicicleta em um dos
+                parques mais icônicos da cidade.
+              </p>
+            </div>
 
-    </div>
+            <div>
+              <p>
+                <a
+                  href="https://masp.org.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  MASP
+                </a>
+              </p>
+              <p>
+                Museu de arte na Avenida Paulista, conhecido pela arquitetura
+                marcante e excelentes exposições.
+              </p>
+            </div>
 
-  </div>
-</Section>
+            <div>
+              <p>
+                <a
+                  href="https://mercadomunicipalsp.com/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Mercado Municipal
+                </a>
+              </p>
+              <p>
+                Um passeio clássico para provar frutas tropicais e o famoso
+                sanduíche de mortadela.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
-{/* Dicas 3 */}
-<Section id="dicas-3" overlayClassName="">
-  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+      {/* Dicas 4 */}
+      <Section id="dicas-4" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+          <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+            Compras
+          </h2>
 
-    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
-      O que fazer em São Paulo
-    </h2>
+          <div
+            style={{ fontFamily: "var(--font-sketch)" }}
+            className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left space-y-6"
+          >
+            <div>
+              <p>
+                <a
+                  href="https://cidadejardimshopping.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Shopping Cidade Jardim
+                </a>
+              </p>
+            </div>
 
-    <div
-      style={{ fontFamily: "var(--font-sketch)" }}
-      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left space-y-6"
-    >
+            <div>
+              <p className="font-semibold">Região dos Jardins</p>
+              <p>
+                Uma das áreas mais gostosas da cidade para passear entre lojas,
+                cafés e restaurantes.
+              </p>
+            </div>
 
-      <div>
-        <p>
-          <a href="https://parqueibirapuera.org/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
-            Parque Ibirapuera
-          </a>
-        </p>
-        <p>
-          Perfeito para caminhar, correr ou andar de bicicleta em um dos parques mais icônicos da cidade.
-        </p>
-      </div>
+            <div>
+              <p>
+                <a
+                  href="https://www.cidadematarazzo.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Cidade Matarazzo / Mata Lab
+                </a>
+              </p>
+              <p>
+                Espaço de moda, design e lifestyle dentro do complexo do
+                Rosewood.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
-      <div>
-        <p>
-          <a href="https://masp.org.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
-            MASP
-          </a>
-        </p>
-        <p>
-          Museu de arte na Avenida Paulista, conhecido pela arquitetura marcante e excelentes exposições.
-        </p>
-      </div>
+      {/* Dicas 5 */}
+      <Section id="dicas-5" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+          <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+            Treino e bem-estar
+          </h2>
 
-      <div>
-        <p>
-          <a href="https://mercadomunicipalsp.com/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
-            Mercado Municipal
-          </a>
-        </p>
-        <p>
-          Um passeio clássico para provar frutas tropicais e o famoso sanduíche de mortadela.
-        </p>
-      </div>
+          <div
+            style={{ fontFamily: "var(--font-sketch)" }}
+            className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
+          >
+            <ul className="space-y-2">
+              <li>
+                •{" "}
+                <a
+                  href="https://parqueibirapuera.org/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Corrida ou caminhada no Ibirapuera
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://studiovelocity.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Aula de spinning na Velocity Studio
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://lescinqgym.com.br/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Yoga ou pilates no Les Cinq Gym
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://www.funcionalfight.com/"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Luta + funcional no Funcional Fight Club
+                </a>
+              </li>
+              <li>
+                •{" "}
+                <a
+                  href="https://rosewoodhotels.com/en/sao-paulo/wellness/asaya-spa"
+                  target="_blank"
+                  className="underline font-semibold hover:opacity-70 transition"
+                >
+                  Spa Asaya dentro do Rosewood
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </Section>
 
-    </div>
+      {/* Clima */}
+      <Section id="clima" overlayClassName="">
+        <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+          <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
+            Clima
+          </h2>
 
-  </div>
-</Section>
+          <div
+            style={{ fontFamily: "var(--font-sketch)" }}
+            className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
+          >
+            <p>
+              No início de agosto, São Paulo costuma ter um clima ameno e
+              agradável, típico do inverno paulistano. As temperaturas médias
+              ficam entre <span className="font-semibold">12 °C e 24 °C</span>,
+              com dias ensolarados ou parcialmente nublados e noites mais
+              frescas.
+            </p>
 
-{/* Dicas 4 */}
-<Section id="dicas-4" overlayClassName="">
-  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
+            <p className="mt-4">
+              Esse também é um dos períodos mais secos do ano, com baixa chance
+              de chuva — ideal para aproveitar a cidade e celebrar ao ar livre.
+            </p>
 
-    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
-      Compras
-    </h2>
+            <p className="mt-4">
+              Recomendamos trazer um{" "}
+              <span className="font-semibold">casaco leve</span> para a noite ✨
+            </p>
 
-    <div
-      style={{ fontFamily: "var(--font-sketch)" }}
-      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left space-y-6"
-    >
-
-      <div>
-        <p>
-          <a href="https://cidadejardimshopping.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
-            Shopping Cidade Jardim
-          </a>
-        </p>
-      </div>
-
-      <div>
-        <p className="font-semibold">Região dos Jardins</p>
-        <p>
-          Uma das áreas mais gostosas da cidade para passear entre lojas, cafés e restaurantes.
-        </p>
-      </div>
-
-      <div>
-        <p>
-          <a href="https://www.cidadematarazzo.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">
-            Cidade Matarazzo / Mata Lab
-          </a>
-        </p>
-        <p>
-          Espaço de moda, design e lifestyle dentro do complexo do Rosewood.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</Section>
-
-{/* Dicas 5 */}
-<Section id="dicas-5" overlayClassName="">
-  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
-
-    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
-      Treino e bem-estar
-    </h2>
-
-    <div
-      style={{ fontFamily: "var(--font-sketch)" }}
-      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
-    >
-
-      <ul className="space-y-2">
-        <li>• <a href="https://parqueibirapuera.org/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Corrida ou caminhada no Ibirapuera</a></li>
-        <li>• <a href="https://studiovelocity.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Aula de spinning na Velocity Studio</a></li>
-        <li>• <a href="https://lescinqgym.com.br/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Yoga ou pilates no Les Cinq Gym</a></li>
-        <li>• <a href="https://www.funcionalfight.com/" target="_blank" className="underline font-semibold hover:opacity-70 transition">Luta + funcional no Funcional Fight Club</a></li>
-        <li>• <a href="https://rosewoodhotels.com/en/sao-paulo/wellness/asaya-spa" target="_blank" className="underline font-semibold hover:opacity-70 transition">Spa Asaya dentro do Rosewood</a></li>
-      </ul>
-
-    </div>
-
-  </div>
-</Section>
-
-{/* Clima */}
-<Section id="clima" overlayClassName="">
-  <div className="min-h-screen w-full flex flex-col items-center px-6 md:px-8">
-
-    <h2 className="mt-16 md:mt-20 text-6xl md:text-7xl font-semibold text-[#1c5134] text-center">
-      Clima
-    </h2>
-
-    <div
-      style={{ fontFamily: "var(--font-sketch)" }}
-      className="mt-10 text-[#5a2423] text-base md:text-lg max-w-xl leading-relaxed text-left"
-    >
-
-      <p>
-        No início de agosto, São Paulo costuma ter um clima ameno e agradável, típico do inverno paulistano. As temperaturas médias ficam entre <span className="font-semibold">12 °C e 24 °C</span>, com dias ensolarados ou parcialmente nublados e noites mais frescas.
-      </p>
-
-      <p className="mt-4">
-        Esse também é um dos períodos mais secos do ano, com baixa chance de chuva — ideal para aproveitar a cidade e celebrar ao ar livre.
-      </p>
-
-      <p className="mt-4">
-        Recomendamos trazer um <span className="font-semibold">casaco leve</span> para a noite ✨
-      </p>
-
-      <p className="mt-6 text-sm opacity-70">
-        *Esta é apenas uma estimativa com base em dados históricos. A previsão atualizada será exibida aqui mais perto da data do casamento.*
-      </p>
-
-    </div>
-
-  </div>
-</Section>
+            <p className="mt-6 text-sm opacity-70">
+              *Esta é apenas uma estimativa com base em dados históricos. A
+              previsão atualizada será exibida aqui mais perto da data do
+              casamento.*
+            </p>
+          </div>
+        </div>
+      </Section>
 
       {/* Cabelo & Make */}
       <Section id="cabelo-make" overlayClassName="">
