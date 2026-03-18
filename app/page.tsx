@@ -11,51 +11,50 @@ export default function Page() {
       <SideNav />
 
       {/* Home - Hero */}
-   <Section id="home">
-  <div className="relative min-h-screen overflow-hidden">
-    
-    {/* Mobile GIF */}
-    <div className="absolute inset-0 md:hidden">
-      <img
-        src="/images/home-mobile.gif"
-        alt=""
-        className="w-full h-full object-cover"
-      />
-    </div>
+      <Section id="home">
+        <div className="relative min-h-screen overflow-hidden">
+          {/* Mobile GIF */}
+          <div className="absolute inset-0 md:hidden">
+            <img
+              src="/images/home-mobile.gif"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-    {/* Desktop GIF */}
-    <div className="absolute inset-0 hidden md:block">
-      <img
-        src="/images/home-desktop.gif"
-        alt=""
-        className="w-full h-full object-cover"
-      />
-    </div>
+          {/* Desktop GIF */}
+          <div className="absolute inset-0 hidden md:block">
+            <img
+              src="/images/home-desktop.gif"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-    {/* ===== Title ===== */}
-    <div className="relative z-10 min-h-screen text-white text-center px-6">
-      <h1
+          {/* ===== Title ===== */}
+          <div className="relative z-10 min-h-screen text-white text-center px-6">
+            <h1
   className="
     absolute
     top-28 sm:top-28 md:top-32
     left-1/2 -translate-x-1/2
     w-full
-    px-2
+    px-4
     text-center
-    text-[clamp(3.6rem,9vw,4.5rem)]
+    text-[clamp(2.8rem,8vw,4.2rem)]
     md:text-7xl
     font-semibold
-    leading-[0.9]
+    leading-none
+    whitespace-nowrap
   "
 >
-  <span className="block sm:inline">Marcela</span>
-  <span className="block sm:inline">&</span>
-  <span className="block sm:inline mt-6 sm:mt-0">Heitor</span>
+  <span>Marcela</span>
+  <span className="mx-2">&</span>
+  <span>Heitor</span>
 </h1>
-    </div>
-
-  </div>
-</Section>
+          </div>
+        </div>
+      </Section>
 
       {/* Intro */}
       <Section
