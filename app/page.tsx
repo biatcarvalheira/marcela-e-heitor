@@ -33,8 +33,8 @@ export default function Page() {
 
           {/* ===== Title ===== */}
           <div className="relative z-10 min-h-screen text-white text-center px-6">
-           <h1
-  className="
+            <h1
+              className="
     absolute
     top-[34vh] sm:top-[36vh] md:top-32
     left-1/2 -translate-x-1/2
@@ -46,11 +46,11 @@ export default function Page() {
     leading-none
     whitespace-nowrap
   "
->
-  <span>Marcela</span>
-  <span className="mx-2">&</span>
-  <span>Heitor</span>
-</h1>
+            >
+              <span>Marcela</span>
+              <span className="mx-2">&</span>
+              <span>Heitor</span>
+            </h1>
           </div>
         </div>
       </Section>
