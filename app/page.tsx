@@ -33,15 +33,14 @@ export default function Page() {
 
           {/* ===== Title ===== */}
           <div className="relative z-10 min-h-screen text-white text-center px-6">
-            <h1
+           <h1
   className="
     absolute
-    top-28 sm:top-28 md:top-32
+    top-[34vh] sm:top-[36vh] md:top-32
     left-1/2 -translate-x-1/2
-    w-full
-    px-4
+    max-w-[95vw]
     text-center
-    text-[clamp(2.8rem,8vw,4.2rem)]
+    text-[clamp(2.4rem,7.5vw,4.2rem)]
     md:text-7xl
     font-semibold
     leading-none
