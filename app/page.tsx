@@ -197,7 +197,7 @@ export default function Page() {
             >
               No dia <strong>01 de agosto de 2026</strong>, a cerimônia
               religiosa será na <strong>Capela Santa Luzia</strong>, às{" "}
-              <strong>17h30</strong>, seguida da recepção no{" "}
+              <strong>17h45</strong>, seguida da recepção no{" "}
               <strong>Hotel Rosewood</strong> (salão principal) às{" "}
               <strong>19h30</strong>, em São Paulo.
               <br />
